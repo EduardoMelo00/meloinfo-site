@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="380" height="64" viewBox="0 0 380 64" fill="none">
+  <path d="M10 50V14l20 22.5L50 14v36" stroke="#f0f3f9" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="47" r="4.2" fill="#5b7cff"/>
+  <text x="72" y="44" font-family="Inter Tight, Inter, -apple-system, sans-serif" font-size="30" font-weight="650" letter-spacing="-0.6" fill="#f0f3f9">Melo <tspan fill="#9aa6ba" font-weight="450">Tecnologia</tspan></text>
+</svg>

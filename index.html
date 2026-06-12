@@ -3,164 +3,235 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Melo — Tecnologia, IA e Desenvolvimento de Software</title>
-<meta name="description" content="MELO TREINAMENTOS — soluções em inteligência artificial, desenvolvimento mobile e web, blockchain e treinamentos. Criadores da Kaptfy. Florianópolis – SC.">
-<style>
-  :root{
-    --bg:#0a0e1a; --bg-card:#111726; --bg-subtle:#1a2235;
-    --border:#1f2a42; --text:#eef2fb; --text-2:#94a3c4; --text-3:#64748f;
-    --accent:#3b82f6; --accent-2:#22d3a7;
-  }
-  *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Inter',sans-serif;-webkit-font-smoothing:antialiased;line-height:1.6}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-
-  header{padding:22px 0;border-bottom:1px solid var(--border)}
-  header .wrap{display:flex;align-items:center;justify-content:space-between}
-  .logo{font-size:22px;font-weight:800;letter-spacing:-0.5px}
-  .logo span{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  nav a{color:var(--text-2);text-decoration:none;font-size:14px;margin-left:28px;font-weight:500}
-  nav a:hover{color:var(--text)}
-
-  .hero{padding:110px 0 90px;text-align:center;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(59,130,246,.12),transparent)}
-  .hero h1{font-size:clamp(34px,5.5vw,58px);font-weight:800;letter-spacing:-1.5px;line-height:1.12;max-width:820px;margin:0 auto}
-  .hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p{color:var(--text-2);font-size:18px;max-width:600px;margin:24px auto 0}
-  .hero .cta{display:inline-block;margin-top:38px;background:linear-gradient(90deg,#2563eb,#3b82f6);color:#fff;font-weight:700;padding:15px 34px;border-radius:12px;text-decoration:none;font-size:16px;box-shadow:0 12px 32px rgba(59,130,246,.3)}
-
-  section{padding:84px 0}
-  .sec-tag{color:var(--accent-2);font-size:12px;font-weight:800;letter-spacing:2.5px;text-transform:uppercase}
-  h2{font-size:clamp(26px,3.4vw,38px);font-weight:800;letter-spacing:-1px;margin-top:10px}
-  .sec-sub{color:var(--text-2);margin-top:12px;max-width:560px}
-
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:44px}
-  .card{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:28px}
-  .card .ic{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:21px;background:rgba(59,130,246,.12);margin-bottom:18px}
-  .card h3{font-size:18px;font-weight:700;letter-spacing:-0.3px}
-  .card p{color:var(--text-2);font-size:14.5px;margin-top:8px}
-
-  .clients .grid{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-  .client{background:var(--bg-card);border:1px solid var(--border);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:10px}
-  .client .name{font-size:21px;font-weight:800;letter-spacing:-0.4px}
-  .client .badge{align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:5px 12px;border-radius:99px;background:rgba(34,211,167,.1);color:var(--accent-2);border:1px solid rgba(34,211,167,.25)}
-  .client p{color:var(--text-2);font-size:14.5px}
-  .client a{color:var(--accent);text-decoration:none;font-size:14px;font-weight:600;margin-top:auto}
-
-  .contact{background:var(--bg-card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);text-align:center}
-  .contact a.mail{display:inline-block;margin-top:26px;font-size:21px;font-weight:700;color:var(--accent);text-decoration:none}
-  .contact .loc{color:var(--text-3);margin-top:14px;font-size:14px}
-
-  footer{padding:36px 0;text-align:center;color:var(--text-3);font-size:13px}
-  footer b{color:var(--text-2)}
-
-  @media(max-width:640px){
-    nav a{margin-left:16px;font-size:13px}
-    .hero{padding:70px 0 60px}
-    section{padding:60px 0}
-  }
-</style>
+<title>Melo Tecnologia — estúdio de software, IA e produtos digitais</title>
+<meta name="description" content="Melo Tecnologia — estúdio de software: inteligência artificial aplicada, desenvolvimento mobile e web, blockchain e consultoria técnica.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@450;620;680&family=Inter:wght@400;530;600&family=JetBrains+Mono:wght@400&display=swap">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" type="image/svg+xml" href="mark.svg">
 </head>
 <body>
 
-<header>
-  <div class="wrap">
-    <div class="logo">MELO<span>.</span></div>
-    <nav>
-      <a href="#solucoes">Soluções</a>
-      <a href="#produtos">Produtos</a>
-      <a href="#contato">Contato</a>
-    </nav>
-  </div>
+<header class="wrap nav">
+  <a class="brand" href="#" aria-label="Melo Tecnologia — início">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+      <path d="M4 20V6l8 9 8-9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle class="mark-dot" cx="12" cy="19" r="1.7"/>
+    </svg>
+    <span class="word">Melo <span>Tecnologia</span></span>
+  </a>
+  <a class="cta-chip" href="mailto:contato@meloinfo.com.br">Fale com a gente</a>
 </header>
 
-<section class="hero">
-  <div class="wrap">
-    <h1>Tecnologia sob medida, da <em>ideia ao produto</em> em produção</h1>
-    <p>Desenvolvemos software, inteligência artificial e plataformas digitais que geram resultado real — para nós e para nossos clientes.</p>
-    <a class="cta" href="#contato">Fale com a gente</a>
-  </div>
-</section>
+<main>
 
-<section id="solucoes">
-  <div class="wrap">
-    <div class="sec-tag">Soluções</div>
-    <h2>O que a gente constrói</h2>
-    <p class="sec-sub">Times enxutos, entrega rápida e tecnologia de ponta aplicada a problemas de negócio.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="ic">🤖</div>
-        <h3>Inteligência Artificial</h3>
-        <p>Agentes de IA, automação inteligente e integração de modelos de linguagem em produtos e operações.</p>
-      </div>
-      <div class="card">
-        <div class="ic">📱</div>
-        <h3>Desenvolvimento Mobile</h3>
-        <p>Aplicativos iOS e Android nativos e multiplataforma, do design à publicação nas lojas.</p>
-      </div>
-      <div class="card">
-        <div class="ic">💻</div>
-        <h3>Web &amp; SaaS</h3>
-        <p>Plataformas web completas: produto, painel, API, billing e infraestrutura escalável.</p>
-      </div>
-      <div class="card">
-        <div class="ic">⛓️</div>
-        <h3>Blockchain &amp; Cripto</h3>
-        <p>Smart contracts, infraestrutura de blockchain e soluções com criptoativos, da auditoria ao deploy.</p>
-      </div>
-      <div class="card">
-        <div class="ic">🎓</div>
-        <h3>Treinamentos</h3>
-        <p>Capacitação de equipes em tecnologia, IA aplicada e desenvolvimento de software.</p>
-      </div>
-      <div class="card">
-        <div class="ic">⚙️</div>
-        <h3>Consultoria Técnica</h3>
-        <p>Arquitetura, infraestrutura, performance e segurança para produtos digitais em crescimento.</p>
+  <section class="wrap hero">
+    <div>
+      <h1>Projetamos, construímos e operamos software.</h1>
+      <p class="lede">A Melo é um estúdio de tecnologia. Criamos produtos próprios — como a Kaptfy — e desenvolvemos sistemas sob medida com inteligência artificial, mobile, web e blockchain.</p>
+      <div class="actions">
+        <a class="cta-chip" href="mailto:contato@meloinfo.com.br">Conversar sobre um projeto</a>
+        <a class="link-quiet" href="#trabalho">Ver o que está no ar ↓</a>
       </div>
     </div>
-  </div>
-</section>
+    <figure>
+      <img src="kaptfy-painel.webp" alt="Painel da Kaptfy em produção: métricas de investimento, alcance e leads de uma campanha imobiliária" width="1600" height="917" fetchpriority="high">
+      <figcaption>Kaptfy — plataforma de tráfego pago imobiliário, criada e operada pela Melo.</figcaption>
+    </figure>
+  </section>
 
-<section id="produtos" class="clients">
-  <div class="wrap">
-    <div class="sec-tag">Produtos &amp; Clientes</div>
-    <h2>O que já está no ar</h2>
-    <div class="grid">
-      <div class="client">
-        <span class="badge">Produto próprio</span>
-        <div class="name">Kaptfy</div>
-        <p>Plataforma SaaS que cria, publica e otimiza campanhas de Meta Ads para o mercado imobiliário — anúncios que viram leads no WhatsApp do corretor.</p>
-        <a href="https://kaptfy.com.br" target="_blank" rel="noopener">kaptfy.com.br →</a>
+  <section class="wrap" id="solucoes">
+    <header class="head-hang">
+      <h2>O que fazemos</h2>
+      <p>Cinco frentes, um padrão: entregar sistema rodando, não apresentação de sistema.</p>
+    </header>
+
+    <div class="tabs">
+      <div class="tablist" role="tablist" aria-label="Soluções">
+        <button class="tab" role="tab" id="tab-ia" aria-controls="panel-ia" aria-selected="true">IA aplicada</button>
+        <button class="tab" role="tab" id="tab-mobile" aria-controls="panel-mobile" aria-selected="false">Mobile</button>
+        <button class="tab" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false">Web &amp; SaaS</button>
+        <button class="tab" role="tab" id="tab-chain" aria-controls="panel-chain" aria-selected="false">Blockchain</button>
+        <button class="tab" role="tab" id="tab-consult" aria-controls="panel-consult" aria-selected="false">Consultoria</button>
       </div>
-      <div class="client">
-        <span class="badge">Cliente</span>
-        <div class="name">VelaCasa</div>
-        <p>E-commerce e presença digital para marca de velas aromáticas artesanais de Florianópolis.</p>
+
+      <div class="panel is-open" role="tabpanel" id="panel-ia" aria-labelledby="tab-ia">
+        <div>
+          <h3>Inteligência artificial dentro da operação</h3>
+          <p class="desc">Agentes e automações com modelos de linguagem no fluxo real de trabalho — decidindo, escrevendo e executando com supervisão humana onde importa. É o que roda na Kaptfy todos os dias.</p>
+        </div>
+        <ul>
+          <li><strong>Agentes de operação</strong> — atendimento, triagem e rotinas que hoje consomem gente</li>
+          <li><strong>Integração de LLMs</strong> a sistemas que você já usa, com aprovação humana configurável</li>
+          <li><strong>Custo sob controle</strong> — arquitetura de prompts e cache pensada pra conta fechar</li>
+        </ul>
       </div>
-      <div class="client">
-        <span class="badge">Cliente</span>
-        <div class="name">Melo Engenharia</div>
-        <p>Sistemas de gestão e automação de processos para engenharia e construção.</p>
+
+      <div class="panel" role="tabpanel" id="panel-mobile" aria-labelledby="tab-mobile" hidden>
+        <div>
+          <h3>Aplicativos iOS e Android</h3>
+          <p class="desc">Da arquitetura à publicação nas lojas. Apps que conversam com o seu backend, recebem push e funcionam como o usuário espera — não adaptações de site.</p>
+        </div>
+        <ul>
+          <li><strong>React Native</strong> — uma base de código, duas plataformas, experiência nativa</li>
+          <li><strong>Publicação completa</strong> — App Store e Google Play, do cadastro à revisão</li>
+          <li><strong>Notificações push</strong> e integração com sistemas existentes</li>
+        </ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-web" aria-labelledby="tab-web" hidden>
+        <div>
+          <h3>Plataformas web completas</h3>
+          <p class="desc">Produto, painel administrativo, API, cobrança recorrente e infraestrutura. O ciclo inteiro de um SaaS — que a gente conhece porque opera o nosso.</p>
+        </div>
+        <ul>
+          <li><strong>Aplicações multi-tenant</strong> com controle de acesso por workspace</li>
+          <li><strong>Billing com Stripe</strong> — assinatura, upgrade, inadimplência, nota</li>
+          <li><strong>Infraestrutura</strong> — deploy contínuo, monitoramento e backup desde o dia um</li>
+        </ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-chain" aria-labelledby="tab-chain" hidden>
+        <div>
+          <h3>Blockchain e criptoativos</h3>
+          <p class="desc">Smart contracts escritos pra serem auditados, infraestrutura de chain e integração de pagamentos com cripto — engenharia, não especulação.</p>
+        </div>
+        <ul>
+          <li><strong>Smart contracts</strong> em Solidity, com suíte de testes e revisão de segurança</li>
+          <li><strong>Infraestrutura de rede</strong> — nós, RPC, indexação e monitoramento</li>
+          <li><strong>Integração de pagamentos</strong> e custódia em produtos existentes</li>
+        </ul>
+      </div>
+
+      <div class="panel" role="tabpanel" id="panel-consult" aria-labelledby="tab-consult" hidden>
+        <div>
+          <h3>Consultoria técnica</h3>
+          <p class="desc">Uma segunda opinião de quem constrói. Revisão de arquitetura, performance e segurança com recomendação executável — e a opção de implementar com você.</p>
+        </div>
+        <ul>
+          <li><strong>Revisão de arquitetura</strong> antes de decisões caras de reescrever</li>
+          <li><strong>Performance e custo</strong> — banco, consultas, infraestrutura e fatura de nuvem</li>
+          <li><strong>Capacitação do time</strong> — seu time aprende o que a gente faz, junto</li>
+        </ul>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section id="contato" class="contact">
-  <div class="wrap">
-    <div class="sec-tag">Contato</div>
-    <h2>Vamos conversar sobre o seu projeto</h2>
+  <section class="wrap" id="trabalho">
+    <header class="head-hang">
+      <h2>O que está no ar</h2>
+    </header>
+
+    <div class="work-row">
+      <div>
+        <span class="name">Kaptfy</span>
+        <span class="kind">Produto próprio · SaaS</span>
+      </div>
+      <p class="about">Plataforma que cria, publica e otimiza campanhas de Meta Ads para o mercado imobiliário. O corretor cadastra o imóvel; o anúncio vai ao ar e o lead chega no WhatsApp dele.</p>
+      <a class="go" href="https://kaptfy.com.br" target="_blank" rel="noopener">kaptfy.com.br →</a>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <span class="name">VelaCasa</span>
+        <span class="kind">Cliente · E-commerce</span>
+      </div>
+      <p class="about">Loja virtual e operação digital de uma marca de velas aromáticas artesanais — do catálogo ao tráfego.</p>
+      <span class="go"></span>
+    </div>
+
+    <div class="work-row">
+      <div>
+        <span class="name">Melo Engenharia</span>
+        <span class="kind">Cliente · Sistemas internos</span>
+      </div>
+      <p class="about">Gestão e automação de processos para operação de engenharia: orçamento, medição e acompanhamento de obra.</p>
+      <span class="go"></span>
+    </div>
+  </section>
+
+  <section class="wrap" id="processo">
+    <header class="head-hang">
+      <h2>Como trabalhamos</h2>
+    </header>
+
+    <ol class="steps">
+      <li>
+        <span class="stage">1.0</span>
+        <div>
+          <h3>Diagnóstico</h3>
+          <p>Entendemos o problema antes de escrever código: processo, dados, restrições. Se software não for a resposta, dizemos — sai mais barato ouvir isso agora.</p>
+        </div>
+      </li>
+      <li>
+        <span class="stage">2.0</span>
+        <div>
+          <h3>Construção</h3>
+          <p>Ciclos curtos com entregas que você usa, não relatórios de progresso. Acesso direto a quem está construindo, sem camada de gerência traduzindo recado.</p>
+        </div>
+      </li>
+      <li>
+        <span class="stage">3.0</span>
+        <div>
+          <h3>Operação</h3>
+          <p>Sistema no ar é o começo do trabalho, não o fim. Monitoramos, corrigimos e evoluímos — é assim que os nossos próprios produtos rodam.</p>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap contact" id="contato">
+    <header class="head-hang" style="margin-bottom: 0;">
+      <h2>Conte o problema</h2>
+    </header>
     <a class="mail" href="mailto:contato@meloinfo.com.br">contato@meloinfo.com.br</a>
-    <div class="loc">Florianópolis – SC, Brasil</div>
-  </div>
-</section>
+    <p class="note">Escreva com o contexto que tiver — uma ideia, um sistema travado, uma dúvida técnica. Respondemos com um caminho concreto, não com proposta de prateleira.</p>
+  </section>
 
-<footer>
-  <div class="wrap">
-    <b>MELO TREINAMENTOS</b> · Florianópolis – SC · © 2026 — Todos os direitos reservados
+</main>
+
+<footer class="wrap foot">
+  <div class="row">
+    <a class="brand" href="#" aria-label="Melo Tecnologia — voltar ao topo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M4 20V6l8 9 8-9v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="mark-dot" cx="12" cy="19" r="1.7"/>
+      </svg>
+      <span class="word">Melo <span>Tecnologia</span></span>
+    </a>
+    <nav class="links" aria-label="Links do rodapé">
+      <a href="https://kaptfy.com.br" target="_blank" rel="noopener">Kaptfy</a>
+      <a href="mailto:contato@meloinfo.com.br">Contato</a>
+    </nav>
   </div>
+  <p class="fine">Melo Tecnologia · Brasil · © 2026</p>
 </footer>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
+  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+
+  function select(tab) {
+    tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
+    panels.forEach((p) => {
+      const open = p.id === tab.getAttribute('aria-controls');
+      p.classList.toggle('is-open', open);
+      p.hidden = !open;
+    });
+  }
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => select(tab));
+    tab.addEventListener('keydown', (e) => {
+      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+      e.preventDefault();
+      const next = e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
+      tabs[next].focus({ preventScroll: true });
+      select(tabs[next]);
+    });
+  });
+</script>
 
 </body>
 </html>

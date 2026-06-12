@@ -1,0 +1,47 @@
+/* Hallmark · genre: modern-minimal · theme: Quiet · axes: light / geometric-sans / cool-ink */
+:root {
+  --color-paper:      oklch(98.4% 0.002 250);
+  --color-paper-2:    oklch(96.6% 0.003 250);
+  --color-ink:        oklch(21% 0.012 260);
+  --color-ink-2:      oklch(45% 0.012 260);
+  --color-muted:      oklch(50% 0.012 260);
+  --color-rule:       oklch(90% 0.004 250);
+  --color-accent:     oklch(45% 0.16 262);
+  --color-accent-ink: oklch(98.4% 0.002 250);
+  --color-focus:      oklch(55% 0.18 262);
+
+  --font-display: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "JetBrains Mono", ui-monospace, "SF Mono", monospace;
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs:  0.75rem;
+  --space-sm:  1rem;
+  --space-md:  1.5rem;
+  --space-lg:  2rem;
+  --space-xl:  3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+
+  --text-xs:  0.75rem;
+  --text-sm:  0.875rem;
+  --text-md:  1.0625rem;
+  --text-lg:  1.3125rem;
+  --text-xl:  1.75rem;
+  --text-2xl: 2.25rem;
+  --text-display-s: clamp(1.9rem, 3.2vw + 0.6rem, 2.9rem);
+  --text-display:   clamp(2.4rem, 4.6vw + 0.6rem, 4.4rem);
+
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-short:  180ms;
+  --dur-medium: 260ms;
+
+  --radius-card:  10px;
+  --radius-pill:  999px;
+  --radius-input: 8px;
+
+  --page-gutter: clamp(1.25rem, 4vw, 3rem);
+  --measure: 62ch;
+}
