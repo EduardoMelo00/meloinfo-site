@@ -1,27 +1,40 @@
 /* Melo Tecnologia · tokens · studied-DNA (zedai.dev) */
 :root {
-  --color-bg:        rgb(16, 16, 23);
-  --color-bg-2:      rgb(21, 21, 30);
-  --color-card:      rgb(26, 26, 38);
-  --color-card-2:    rgb(32, 32, 46);
+  --color-bg:        rgb(13, 13, 20);
+  --color-bg-2:      rgb(18, 18, 27);
+  --color-card:      rgb(23, 23, 34);
+  --color-card-2:    rgb(30, 30, 44);
   --color-line:      rgba(255, 255, 255, 0.10);
   --color-line-2:    rgba(255, 255, 255, 0.16);
 
   --color-text:      rgb(255, 255, 255);
-  --color-text-2:    rgba(255, 255, 255, 0.72);
+  --color-text-2:    rgba(255, 255, 255, 0.74);
   --color-text-3:    rgba(255, 255, 255, 0.48);
 
   --color-accent:    rgb(47, 107, 255);
   --color-accent-hover: rgb(72, 126, 255);
-  --color-accent-ink: rgb(255, 255, 255);
-  --color-cyan:      rgb(80, 190, 255);
+  --color-cyan:      rgb(76, 201, 232);
+  --color-mint:      rgb(79, 227, 203);
+  --color-mint-line: rgba(79, 227, 203, 0.32);
   --color-focus:     rgb(120, 165, 255);
+  --color-emerald:   rgb(16, 185, 129);
+
+  --grad-cta:   linear-gradient(100deg, rgb(38, 158, 213), rgb(47, 107, 255));
+  --grad-pill:  linear-gradient(100deg, rgb(36, 196, 219), rgb(35, 183, 138));
+  --grad-icon:  linear-gradient(160deg, rgb(96, 165, 250), rgb(37, 99, 235));
+  --grad-line:  linear-gradient(90deg, rgb(47, 107, 255), rgb(76, 201, 232), rgb(79, 227, 203));
+  --grad-silver: linear-gradient(180deg, rgb(248, 250, 253) 18%, rgb(148, 158, 176));
 
   --light-bg:        rgb(247, 248, 251);
   --light-card:      rgb(255, 255, 255);
-  --light-text:      rgb(18, 18, 28);
-  --light-text-2:    rgb(82, 88, 105);
+  --light-text:      rgb(19, 21, 32);
+  --light-text-2:    rgb(76, 84, 104);
   --light-line:      rgb(228, 231, 238);
+  --light-teal:      rgb(24, 144, 173);
+  --light-teal-ink:  rgb(13, 110, 138);
+  --light-teal-ghost: rgb(209, 238, 247);
+  --light-pill-bg:   rgb(235, 249, 253);
+  --light-pill-line: rgb(168, 224, 240);
 
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-body:    "Inter", ui-sans-serif, system-ui, sans-serif;
@@ -42,8 +55,8 @@
   --text-lg:  1.25rem;
   --text-xl:  1.625rem;
   --text-2xl: 2.125rem;
-  --text-display-s: clamp(1.9rem, 3vw + 0.6rem, 2.75rem);
-  --text-display:   clamp(2.4rem, 4vw + 0.8rem, 3.75rem);
+  --text-display-s: clamp(2.1rem, 3.2vw + 0.6rem, 3.3rem);
+  --text-display:   clamp(2.6rem, 4.6vw + 0.8rem, 4.6rem);
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --dur-short:  180ms;

@@ -8,15 +8,15 @@
 <meta name="description" content="Melo Tecnologia — estúdio de software: inteligência artificial aplicada, desenvolvimento mobile e web, blockchain e consultoria técnica.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 <link rel="icon" type="image/svg+xml" href="mark.svg">
 </head>
-<body>
+<body id="topo">
 
-<div class="nav-shell">
-  <header class="wrap nav">
-    <a class="brand" href="#" aria-label="Melo Tecnologia — início">
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a class="brand" href="#topo" aria-label="Melo Tecnologia — início">
       <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="url(#bg)"/>
         <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
@@ -29,209 +29,325 @@
       </svg>
       <span class="word">Melo Tecnologia</span>
     </a>
-    <nav class="nav-links" aria-label="Navegação principal">
+    <button class="nav-burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <nav class="nav-links" id="menu" aria-label="Navegação principal">
+      <a class="active" href="#topo">Início</a>
       <a href="#solucoes">Soluções</a>
-      <a href="#trabalho">Trabalho</a>
       <a href="#processo">Processo</a>
-      <a class="btn btn-primary" href="mailto:contato@meloinfo.com.br">Fale com a gente</a>
+      <a href="#trabalho">No ar</a>
+      <a class="btn btn-nav" href="mailto:contato@meloinfo.com.br">Falar com a gente</a>
     </nav>
-  </header>
-</div>
+  </div>
+</header>
 
 <main>
 
   <section class="hero">
-    <div class="bg" aria-hidden="true"><img src="hero-bg.jpg" alt="" fetchpriority="high"></div>
+    <div class="hero-media" aria-hidden="true"><img src="hero-bg.jpg" alt="" fetchpriority="high"></div>
     <div class="wrap hero-inner">
-      <span class="eyebrow">Estúdio de tecnologia</span>
-      <h1>Projetamos, construímos e operamos software.</h1>
+      <span class="eyebrow no-dash">Estúdio de tecnologia para produtos digitais</span>
+      <h1>Projetamos, construímos e operamos software</h1>
       <p class="lede">A Melo cria produtos próprios — como a Kaptfy — e desenvolve sistemas sob medida com inteligência artificial, mobile, web e blockchain.</p>
       <div class="actions">
-        <a class="btn btn-primary" href="mailto:contato@meloinfo.com.br">Conversar sobre um projeto</a>
-        <a class="btn btn-outline" href="#trabalho">Ver o que está no ar</a>
+        <a class="btn btn-grad" href="mailto:contato@meloinfo.com.br">Conversar sobre um projeto</a>
+        <a class="btn btn-dark" href="#trabalho">Ver o que está no ar</a>
       </div>
     </div>
   </section>
 
-  <section class="wrap" id="produto">
-    <div class="product">
+  <section class="logos" aria-label="Marcas que rodam com a Melo">
+    <p class="logos-cap">Produtos e operações que rodam com engenharia Melo</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <span class="wordmark">kaptfy</span>
+        <span class="wordmark serif">VelaCasa</span>
+        <span class="wordmark caps">Melo Engenharia</span>
+        <span class="wordmark">kaptfy</span>
+        <span class="wordmark serif">VelaCasa</span>
+        <span class="wordmark caps">Melo Engenharia</span>
+        <span class="wordmark" aria-hidden="true">kaptfy</span>
+        <span class="wordmark serif" aria-hidden="true">VelaCasa</span>
+        <span class="wordmark caps" aria-hidden="true">Melo Engenharia</span>
+        <span class="wordmark" aria-hidden="true">kaptfy</span>
+        <span class="wordmark serif" aria-hidden="true">VelaCasa</span>
+        <span class="wordmark caps" aria-hidden="true">Melo Engenharia</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="wrap">
+      <div class="cells">
+        <div class="stat"><b>10+</b><span>Projetos entregues</span></div>
+        <div class="stat"><b>5</b><span>Áreas de engenharia</span></div>
+        <div class="stat"><b>24/7</b><span>Operação monitorada</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="product" id="produto">
+    <div class="wrap grid">
       <div>
         <span class="eyebrow">Produto próprio</span>
-        <h2>Kaptfy: software que opera de verdade.</h2>
-        <p>Nossa plataforma de Meta Ads para o mercado imobiliário cria, publica e otimiza campanhas sozinha — o corretor recebe o lead no WhatsApp. É a prova do que entregamos: produto em produção, não protótipo.</p>
-        <ul class="mini-feats">
+        <h2>Kaptfy: o software que <span class="silver">opera de verdade.</span></h2>
+        <p class="lede">Nossa plataforma de Meta Ads para o mercado imobiliário cria, publica e otimiza campanhas sozinha — o corretor recebe o lead no WhatsApp. É a prova do que entregamos: produto em produção, não protótipo.</p>
+        <ul class="feats">
           <li>
-            <span class="mf-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(150,180,255)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg></span>
-            <div><h3>Otimização automática</h3><p>O motor ajusta público e criativo duas vezes por dia, sem intervenção do corretor.</p></div>
+            <span class="icon-sq" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.9 4.9l2.9 2.9M16.2 16.2l2.9 2.9M2 12h4M18 12h4M4.9 19.1l2.9-2.9M16.2 7.8l2.9-2.9"/></svg></span>
+            <div>
+              <h3>Otimização automática</h3>
+              <p>O motor ajusta público e criativo duas vezes por dia, sem intervenção do corretor.</p>
+            </div>
           </li>
           <li>
-            <span class="mf-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(150,180,255)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l2-5a8.4 8.4 0 1 1 16-4.5z"/></svg></span>
-            <div><h3>Lead direto no WhatsApp</h3><p>Do anúncio no Instagram pra conversa real, com aviso na hora.</p></div>
+            <span class="icon-sq" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 8.6 8.6 0 0 1-3.9-.9L3 21l2-5a8.4 8.4 0 1 1 16-4.5z"/></svg></span>
+            <div>
+              <h3>Lead direto no WhatsApp</h3>
+              <p>Do anúncio no Instagram pra conversa real, com aviso na hora.</p>
+            </div>
           </li>
           <li>
-            <span class="mf-icon" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="rgb(150,180,255)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 3 5-6"/></svg></span>
-            <div><a href="https://kaptfy.com.br" target="_blank" rel="noopener">Conhecer a Kaptfy →</a></div>
+            <span class="icon-sq" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c2.5.5 4 2.4 4 5 0 1.6-.7 3-1.8 4 .5 3-1.7 5-4.2 5-.8 0-1.5-.2-2-.6-.5.4-1.2.6-2 .6-2.5 0-4.7-2-4.2-5A5.2 5.2 0 0 1 4 11c0-2.6 1.5-4.5 4-5a4 4 0 0 1 4-4z"/></svg></span>
+            <div>
+              <h3>IA dentro da operação</h3>
+              <p>Agentes e modelos de linguagem decidindo público, copy e orçamento todos os dias.</p>
+            </div>
           </li>
         </ul>
+        <div class="actions">
+          <a class="btn btn-grad" href="https://kaptfy.com.br" target="_blank" rel="noopener">Conhecer a Kaptfy →</a>
+          <a class="btn btn-ghost" href="https://kaptfy.com.br/precos" target="_blank" rel="noopener">Ver planos</a>
+        </div>
       </div>
-      <figure>
+      <figure class="shot">
         <img src="kaptfy-painel.webp" alt="Painel da Kaptfy em produção: métricas de investimento, alcance e leads de uma campanha imobiliária" width="1600" height="917" loading="lazy">
-        <figcaption>Painel da Kaptfy em produção.</figcaption>
       </figure>
     </div>
   </section>
 
-  <section class="wrap" id="solucoes">
-    <header class="sec-head">
-      <span class="eyebrow">Soluções</span>
-      <h2>O que fazemos</h2>
-      <p>Cinco frentes, um padrão: entregar sistema rodando, não apresentação de sistema.</p>
-    </header>
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="background: var(--light-bg);">
+    <path fill="rgb(13,13,20)" d="M0,0 H1440 V30 C1100,96 460,96 0,44 Z"/>
+  </svg>
 
-    <div class="tablist" role="tablist" aria-label="Soluções">
-      <button class="tab" role="tab" id="tab-ia" aria-controls="panel-ia" aria-selected="true">IA aplicada</button>
-      <button class="tab" role="tab" id="tab-mobile" aria-controls="panel-mobile" aria-selected="false">Mobile</button>
-      <button class="tab" role="tab" id="tab-web" aria-controls="panel-web" aria-selected="false">Web &amp; SaaS</button>
-      <button class="tab" role="tab" id="tab-chain" aria-controls="panel-chain" aria-selected="false">Blockchain</button>
-      <button class="tab" role="tab" id="tab-consult" aria-controls="panel-consult" aria-selected="false">Consultoria</button>
-    </div>
-
-    <div class="panel is-open" role="tabpanel" id="panel-ia" aria-labelledby="tab-ia">
-      <div>
-        <span class="p-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c2.5.5 4 2.4 4 5 0 1.6-.7 3-1.8 4 .5 3-1.7 5-4.2 5-.8 0-1.5-.2-2-.6-.5.4-1.2.6-2 .6-2.5 0-4.7-2-4.2-5A5.2 5.2 0 0 1 4 11c0-2.6 1.5-4.5 4-5a4 4 0 0 1 4-4z"/><path d="M12 6v12M8.5 9.5h7M8.5 14.5h7"/></svg>
-        </span>
-        <h3>Inteligência artificial dentro da operação</h3>
-        <p class="desc">Agentes e automações com modelos de linguagem no fluxo real de trabalho — decidindo, escrevendo e executando com supervisão humana onde importa. É o que roda na Kaptfy todos os dias.</p>
-      </div>
-      <ul>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Agentes de operação</strong> — atendimento, triagem e rotinas que hoje consomem gente</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Integração de LLMs</strong> a sistemas que você já usa, com aprovação humana configurável</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Custo sob controle</strong> — arquitetura de prompts e cache pensada pra conta fechar</span></li>
-      </ul>
-    </div>
-
-    <div class="panel" role="tabpanel" id="panel-mobile" aria-labelledby="tab-mobile" hidden>
-      <div>
-        <span class="p-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="3"/><path d="M10.5 18.5h3"/></svg>
-        </span>
-        <h3>Aplicativos iOS e Android</h3>
-        <p class="desc">Da arquitetura à publicação nas lojas. Apps que conversam com o seu backend, recebem push e funcionam como o usuário espera — não adaptações de site.</p>
-      </div>
-      <ul>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>React Native</strong> — uma base de código, duas plataformas, experiência nativa</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Publicação completa</strong> — App Store e Google Play, do cadastro à revisão</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Notificações push</strong> e integração com sistemas existentes</span></li>
-      </ul>
-    </div>
-
-    <div class="panel" role="tabpanel" id="panel-web" aria-labelledby="tab-web" hidden>
-      <div>
-        <span class="p-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4" width="19" height="15" rx="2.5"/><path d="M2.5 9h19M7 6.5h.01"/></svg>
-        </span>
-        <h3>Plataformas web completas</h3>
-        <p class="desc">Produto, painel administrativo, API, cobrança recorrente e infraestrutura. O ciclo inteiro de um SaaS — que a gente conhece porque opera o nosso.</p>
-      </div>
-      <ul>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Aplicações multi-tenant</strong> com controle de acesso por workspace</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Billing com Stripe</strong> — assinatura, upgrade, inadimplência, nota</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Infraestrutura</strong> — deploy contínuo, monitoramento e backup desde o dia um</span></li>
-      </ul>
-    </div>
-
-    <div class="panel" role="tabpanel" id="panel-chain" aria-labelledby="tab-chain" hidden>
-      <div>
-        <span class="p-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h2.5A1.5 1.5 0 0 1 14 8v2.5M14 17.5h-2.5A1.5 1.5 0 0 1 10 16v-2.5"/></svg>
-        </span>
-        <h3>Blockchain e criptoativos</h3>
-        <p class="desc">Smart contracts escritos pra serem auditados, infraestrutura de chain e integração de pagamentos com cripto — engenharia, não especulação.</p>
-      </div>
-      <ul>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Smart contracts</strong> em Solidity, com suíte de testes e revisão de segurança</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Infraestrutura de rede</strong> — nós, RPC, indexação e monitoramento</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Integração de pagamentos</strong> e custódia em produtos existentes</span></li>
-      </ul>
-    </div>
-
-    <div class="panel" role="tabpanel" id="panel-consult" aria-labelledby="tab-consult" hidden>
-      <div>
-        <span class="p-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9c0 .66.39 1.26 1 1.51h.09a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
-        </span>
-        <h3>Consultoria técnica</h3>
-        <p class="desc">Uma segunda opinião de quem constrói. Revisão de arquitetura, performance e segurança com recomendação executável — e a opção de implementar com você.</p>
-      </div>
-      <ul>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Revisão de arquitetura</strong> antes de decisões caras de reescrever</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Performance e custo</strong> — banco, consultas, infraestrutura e fatura de nuvem</span></li>
-        <li><span class="tick" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span><strong>Capacitação do time</strong> — seu time aprende o que a gente faz, junto</span></li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="wrap" id="trabalho">
-    <header class="sec-head">
-      <span class="eyebrow">No ar</span>
-      <h2>O que está no ar</h2>
-      <p>Produto próprio e sistemas de clientes, em produção.</p>
-    </header>
-
-    <div class="work-grid">
-      <article class="work-card">
-        <span class="badge">Produto próprio</span>
-        <h3>Kaptfy</h3>
-        <p>Plataforma SaaS que cria, publica e otimiza campanhas de Meta Ads para o mercado imobiliário. O corretor cadastra o imóvel; o anúncio vai ao ar e o lead chega no WhatsApp dele.</p>
-        <a class="go" href="https://kaptfy.com.br" target="_blank" rel="noopener">kaptfy.com.br →</a>
-      </article>
-
-      <article class="work-card">
-        <span class="badge alt">Cliente</span>
-        <h3>VelaCasa</h3>
-        <p>Loja virtual e operação digital de uma marca de velas aromáticas artesanais — do catálogo ao tráfego pago.</p>
-      </article>
-
-      <article class="work-card">
-        <span class="badge alt">Cliente</span>
-        <h3>Melo Engenharia</h3>
-        <p>Gestão e automação de processos para operação de engenharia: orçamento, medição e acompanhamento de obra.</p>
-      </article>
-    </div>
-  </section>
-
-  <section class="light-band" id="processo">
+  <section class="light" id="solucoes">
     <div class="wrap">
       <header class="sec-head">
-        <span class="eyebrow">Processo</span>
-        <h2>Como trabalhamos</h2>
+        <span class="eyebrow">Soluções</span>
+        <h2>O que <span class="tw">construímos.</span></h2>
+        <p class="sub">Engenharia digital de ponta a ponta — da arquitetura e design ao lançamento e operação contínua.</p>
       </header>
-      <ol class="steps">
-        <li>
-          <h3>Diagnóstico</h3>
-          <p>Entendemos o problema antes de escrever código: processo, dados, restrições. Se software não for a resposta, dizemos — sai mais barato ouvir isso agora.</p>
-        </li>
-        <li>
-          <h3>Construção</h3>
-          <p>Ciclos curtos com entregas que você usa, não relatórios de progresso. Acesso direto a quem está construindo, sem camada de gerência traduzindo recado.</p>
-        </li>
-        <li>
-          <h3>Operação</h3>
-          <p>Sistema no ar é o começo do trabalho, não o fim. Monitoramos, corrigimos e evoluímos — é assim que os nossos próprios produtos rodam.</p>
-        </li>
-      </ol>
+
+      <div class="acc" id="acc">
+        <button class="acc-item" style="--img:url('img/ia.jpg')" aria-expanded="false">
+          <span class="acc-rail"><span class="num">01</span><span class="vt">IA Aplicada</span></span>
+          <span class="acc-body">
+            <span class="badge-num"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 1 4 4c2.5.5 4 2.4 4 5 0 1.6-.7 3-1.8 4 .5 3-1.7 5-4.2 5-.8 0-1.5-.2-2-.6-.5.4-1.2.6-2 .6-2.5 0-4.7-2-4.2-5A5.2 5.2 0 0 1 4 11c0-2.6 1.5-4.5 4-5a4 4 0 0 1 4-4z"/></svg> 01</span>
+            <h3>IA Aplicada</h3>
+            <p class="acc-tag">Inteligência dentro da operação.</p>
+            <p class="acc-desc">Agentes e automações com modelos de linguagem no fluxo real de trabalho — decidindo, escrevendo e executando com supervisão humana onde importa. É o que roda na Kaptfy todos os dias.</p>
+            <span class="acc-pills"><span>Agentes</span><span>LLMs</span><span>Automação</span></span>
+            <span class="acc-more">Conversar sobre IA →</span>
+          </span>
+        </button>
+
+        <button class="acc-item" style="--img:url('img/blockchain.jpg')" aria-expanded="false">
+          <span class="acc-rail"><span class="num">02</span><span class="vt">Blockchain</span></span>
+          <span class="acc-body">
+            <span class="badge-num"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/><path d="M10 6.5h2.5A1.5 1.5 0 0 1 14 8v2.5M14 17.5h-2.5A1.5 1.5 0 0 1 10 16v-2.5"/></svg> 02</span>
+            <h3>Blockchain</h3>
+            <p class="acc-tag">Engenharia, não especulação.</p>
+            <p class="acc-desc">Smart contracts escritos para serem auditados, infraestrutura de rede — nós, RPC, indexação — e integração de pagamentos com cripto em produtos existentes.</p>
+            <span class="acc-pills"><span>Smart Contracts</span><span>Web3</span><span>Infra de rede</span></span>
+            <span class="acc-more">Conversar sobre Web3 →</span>
+          </span>
+        </button>
+
+        <button class="acc-item is-active" style="--img:url('img/software.jpg')" aria-expanded="true">
+          <span class="acc-rail"><span class="num">03</span><span class="vt">Software</span></span>
+          <span class="acc-body">
+            <span class="badge-num"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m8 7-5 5 5 5M16 7l5 5-5 5"/></svg> 03</span>
+            <h3>Desenvolvimento de Software</h3>
+            <p class="acc-tag">Feito para durar, feito para escalar.</p>
+            <p class="acc-desc">Engenharia de ponta a ponta para plataformas web, aplicativos mobile, produtos SaaS e sistemas corporativos. Arquitetura, design, desenvolvimento e deploy — para você focar no negócio.</p>
+            <span class="acc-pills"><span>Web Apps</span><span>Mobile</span><span>SaaS</span><span>APIs</span></span>
+            <span class="acc-more">Conversar sobre o seu sistema →</span>
+          </span>
+        </button>
+
+        <button class="acc-item" style="--img:url('img/ecommerce.jpg')" aria-expanded="false">
+          <span class="acc-rail"><span class="num">04</span><span class="vt">E-commerce</span></span>
+          <span class="acc-body">
+            <span class="badge-num"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.5"/><circle cx="18" cy="20" r="1.5"/><path d="M2.5 3.5h3l2.7 12h10.3l2-8.5H6.2"/></svg> 04</span>
+            <h3>E-commerce</h3>
+            <p class="acc-tag">Da vitrine ao pagamento.</p>
+            <p class="acc-desc">Loja, checkout, meios de pagamento e operação digital — catálogo, frete e tráfego pago trabalhando juntos. Como fazemos na VelaCasa.</p>
+            <span class="acc-pills"><span>Lojas</span><span>Pagamentos</span><span>Operação</span></span>
+            <span class="acc-more">Conversar sobre a sua loja →</span>
+          </span>
+        </button>
+
+        <button class="acc-item" style="--img:url('img/consultoria.jpg')" aria-expanded="false">
+          <span class="acc-rail"><span class="num">05</span><span class="vt">Consultoria</span></span>
+          <span class="acc-body">
+            <span class="badge-num"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c.8-3.4 3.9-5.5 7.5-5.5s6.7 2.1 7.5 5.5"/></svg> 05</span>
+            <h3>Consultoria Técnica</h3>
+            <p class="acc-tag">Uma segunda opinião de quem constrói.</p>
+            <p class="acc-desc">Revisão de arquitetura, performance e segurança com recomendação executável — e a opção de implementar com você, capacitando o seu time no caminho.</p>
+            <span class="acc-pills"><span>Arquitetura</span><span>Performance</span><span>Segurança</span></span>
+            <span class="acc-more">Pedir uma revisão →</span>
+          </span>
+        </button>
+      </div>
+
+      <div class="stats-row">
+        <div><b>3</b><span>Operações no ar</span></div>
+        <div><b>1</b><span>Produto próprio</span></div>
+        <div><b>100%</b><span>Atendimento direto</span></div>
+        <div><b>30min</b><span>Conversa inicial, grátis</span></div>
+      </div>
     </div>
   </section>
 
-  <section class="cta-final" id="contato">
+  <section class="light tight" id="processo">
     <div class="wrap">
-      <span class="eyebrow">Contato</span>
-      <h2>Conte o problema</h2>
-      <p>Escreva com o contexto que tiver — uma ideia, um sistema travado, uma dúvida técnica. Respondemos com um caminho concreto, não com proposta de prateleira.</p>
-      <div class="actions">
-        <a class="btn btn-primary" href="mailto:contato@meloinfo.com.br">Falar com a Melo</a>
-        <a class="mailto" href="mailto:contato@meloinfo.com.br">contato@meloinfo.com.br</a>
+      <header class="sec-head">
+        <span class="eyebrow">Modelo de trabalho</span>
+        <h2>Da ideia à <span class="tw">operação.</span></h2>
+        <p class="sub">Um processo disciplinado em quatro fases que mantém você no controle de cada etapa — sem surpresas, sem custo escondido.</p>
+      </header>
+
+      <div class="phases">
+        <article class="phase">
+          <span class="ghost" aria-hidden="true">01</span>
+          <h3>Diagnóstico &amp; Estratégia</h3>
+          <p>Mergulhamos nos seus objetivos, processo e restrições técnicas. Entregável: escopo fechado e proposta clara. Se software não for a resposta, dizemos.</p>
+          <span class="wk">Semana 1–2</span>
+        </article>
+        <article class="phase">
+          <span class="ghost" aria-hidden="true">02</span>
+          <h3>Arquitetura &amp; Design</h3>
+          <p>Arquitetura do sistema, modelo de dados, contratos de API e protótipos de interface — revisados e aprovados antes da primeira linha de código de produção.</p>
+          <span class="wk">Semana 2–4</span>
+        </article>
+        <article class="phase">
+          <span class="ghost" aria-hidden="true">03</span>
+          <h3>Construção &amp; Iteração</h3>
+          <p>Ciclos curtos com entregas que você usa, não relatórios de progresso. Acesso direto a quem está construindo, sem camada de gerência traduzindo recado.</p>
+          <span class="wk">Semana 4–Lançamento</span>
+        </article>
+        <article class="phase">
+          <span class="ghost" aria-hidden="true">04</span>
+          <h3>Lançamento &amp; Operação</h3>
+          <p>Sistema no ar é o começo do trabalho, não o fim. Deploy sem queda, monitoramento e evolução contínua — é assim que os nossos próprios produtos rodam.</p>
+          <span class="wk">Contínuo</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="background: var(--light-bg);">
+    <path fill="rgb(13,13,20)" d="M0,100 H1440 V40 C1000,108 420,2 0,56 Z"/>
+  </svg>
+
+  <section class="reach" id="atendimento">
+    <div class="wrap">
+      <div class="reach-card">
+        <div class="reach-photo">
+          <img src="img/atendimento.jpg" alt="Atendimento direto: conversa de trabalho em andamento" loading="lazy">
+        </div>
+        <div class="reach-body">
+          <span class="eyebrow">Atendimento</span>
+          <h2>Remoto-primeiro.<br><span class="silver">Entrega confiável.</span></h2>
+          <p class="lede">Time distribuído, atendimento em todo o Brasil — e o seu projeto anda sem você precisar cobrar. Quem responde é quem constrói.</p>
+          <ul class="blts">
+            <li><span class="blt-ic" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 9.5a8.4 8.4 0 0 1-7.5 8.3L3 19l1.2-3A8.4 8.4 0 1 1 14 9.5z" transform="translate(4 1)"/><path d="M8 10h.01M12 10h.01M16 10h.01"/></svg></span>Você fala direto com quem constrói</li>
+            <li><span class="blt-ic" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span>Acompanhamento contínuo, do deploy à operação</li>
+            <li><span class="blt-ic" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M2.8 19c.7-2.9 3.2-4.8 6.2-4.8s5.5 1.9 6.2 4.8"/><circle cx="17.5" cy="9.5" r="2.4"/><path d="M15.5 14.6c2.6.2 4.8 1.9 5.4 4.4"/></svg></span>Time dedicado ao seu projeto</li>
+          </ul>
+          <div class="actions">
+            <a class="btn btn-pill" href="mailto:contato@meloinfo.com.br">Agendar uma conversa →</a>
+          </div>
+          <p class="micro">Sem compromisso. Conversa de 30 minutos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true" style="background: var(--light-bg);">
+    <path fill="rgb(13,13,20)" d="M0,0 H1440 V36 C1060,100 400,100 0,40 Z"/>
+  </svg>
+
+  <section class="light" id="trabalho">
+    <div class="wrap">
+      <header class="sec-head center">
+        <span class="eyebrow center">No ar</span>
+        <h2>O que está em operação</h2>
+        <p class="sub">Produto próprio e sistemas de clientes, rodando em produção.</p>
+      </header>
+
+      <div class="cases">
+        <article class="case">
+          <span class="mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <p>Plataforma SaaS que cria, publica e otimiza campanhas de Meta Ads para o mercado imobiliário. O corretor cadastra o imóvel; o anúncio vai ao ar e o lead chega no WhatsApp.</p>
+          <div class="sep" aria-hidden="true"></div>
+          <div class="case-foot">
+            <span class="avatar"><img src="img/kaptfy-icon.png" alt=""></span>
+            <div><b>Kaptfy</b><small>Produto próprio · SaaS</small></div>
+            <a class="case-link" href="https://kaptfy.com.br" target="_blank" rel="noopener">kaptfy.com.br ↗</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <span class="mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <p>Loja virtual e operação digital de uma marca de velas aromáticas artesanais — do catálogo e checkout ao tráfego pago que sustenta as vendas.</p>
+          <div class="sep" aria-hidden="true"></div>
+          <div class="case-foot">
+            <span class="avatar v">V</span>
+            <div><b>VelaCasa</b><small>Cliente · E-commerce</small></div>
+          </div>
+        </article>
+
+        <article class="case">
+          <span class="mark" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg></span>
+          <p>Gestão e automação de processos para operação de engenharia: orçamento, medição e acompanhamento de obra em uma plataforma única.</p>
+          <div class="sep" aria-hidden="true"></div>
+          <div class="case-foot">
+            <span class="avatar me">ME</span>
+            <div><b>Melo Engenharia</b><small>Cliente · Plataforma web</small></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="light tight" id="faq">
+    <div class="wrap">
+      <header class="sec-head center">
+        <h2>Perguntas comuns</h2>
+      </header>
+      <div class="faq-list">
+        <details class="faq-item" open>
+          <summary>Vocês criam do zero ou também assumem sistemas existentes?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="a">Os dois. Construímos produtos do zero — como a Kaptfy — e também assumimos sistemas que já existem: diagnóstico do código, plano de evolução e operação contínua. Herdar sistema dos outros faz parte do trabalho.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Como funciona o início de um projeto?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="a">Começa com uma conversa de 30 minutos, sem compromisso. Depois vem o diagnóstico (semana 1–2) com escopo fechado e proposta clara — você sabe o que vai receber e quanto custa antes de qualquer linha de código.</p>
+        </details>
+        <details class="faq-item">
+          <summary>O atendimento é remoto?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="a">Sim, remoto-primeiro, atendendo todo o Brasil. Reuniões por vídeo, entregas contínuas que você acompanha em ambiente de teste, e comunicação direta com quem está construindo — sem intermediário.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quem cuida do sistema depois do lançamento?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="a">A gente. Lançar é o começo: monitoramento, correções e evolução contínua fazem parte do modelo — é assim que os nossos próprios produtos rodam. Você pode internalizar depois, com o seu time capacitado no caminho.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Quais tecnologias vocês usam?<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></summary>
+          <p class="a">TypeScript de ponta a ponta — Node.js e NestJS no backend, React e Next.js na web, React Native no mobile. IA com os principais modelos de linguagem do mercado, Solidity para smart contracts e infraestrutura em nuvem com deploy contínuo.</p>
+        </details>
       </div>
     </div>
   </section>
@@ -240,54 +356,63 @@
 
 <footer class="foot">
   <div class="wrap">
-    <div class="row">
-      <a class="brand" href="#" aria-label="Melo Tecnologia — voltar ao topo">
-        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-          <rect width="32" height="32" rx="8" fill="url(#bgf)"/>
-          <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
-          <defs>
-            <linearGradient id="bgf" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
-              <stop stop-color="#5B5BF0"/>
-              <stop offset="1" stop-color="#2E7BE6"/>
-            </linearGradient>
-          </defs>
-        </svg>
-        <span class="word">Melo Tecnologia</span>
-      </a>
-      <nav class="links" aria-label="Links do rodapé">
-        <a href="#solucoes">Soluções</a>
-        <a href="https://kaptfy.com.br" target="_blank" rel="noopener">Kaptfy</a>
-        <a href="mailto:contato@meloinfo.com.br">Contato</a>
-      </nav>
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#topo" aria-label="Melo Tecnologia — voltar ao topo">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+            <rect width="32" height="32" rx="8" fill="url(#bgf)"/>
+            <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+            <defs>
+              <linearGradient id="bgf" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse">
+                <stop stop-color="#5B5BF0"/>
+                <stop offset="1" stop-color="#2E7BE6"/>
+              </linearGradient>
+            </defs>
+          </svg>
+          <span class="word">Melo Tecnologia</span>
+        </a>
+        <p class="blurb">Construímos e operamos produtos digitais — IA aplicada, software sob medida, mobile, e-commerce e blockchain.</p>
+      </div>
+      <div>
+        <h4>Soluções</h4>
+        <ul>
+          <li><a href="#solucoes">IA Aplicada</a></li>
+          <li><a href="#solucoes">Blockchain</a></li>
+          <li><a href="#solucoes">Software</a></li>
+          <li><a href="#solucoes">E-commerce</a></li>
+          <li><a href="#solucoes">Consultoria</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="https://kaptfy.com.br" target="_blank" rel="noopener">Kaptfy</a></li>
+          <li><a href="#processo">Processo</a></li>
+          <li><a href="#trabalho">No ar</a></li>
+          <li><a href="#faq">Perguntas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Fale com a gente</h4>
+        <a class="mailrow" href="mailto:contato@meloinfo.com.br">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="m3 7 9 6 9-6"/></svg>
+          contato@meloinfo.com.br
+        </a>
+        <p class="micro">Respondemos em até 1 dia útil, com um caminho concreto — não com proposta de prateleira.</p>
+      </div>
     </div>
-    <p class="fine">Melo Tecnologia · Brasil · © 2026</p>
+    <div class="foot-bottom">
+      <span>Melo Tecnologia · Brasil · © 2026</span>
+      <span>meloinfo.com.br</span>
+    </div>
   </div>
 </footer>
 
-<script>
-  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-  const panels = Array.from(document.querySelectorAll('[role="tabpanel"]'));
+<button class="to-top" id="toTop" aria-label="Voltar ao topo">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 14 6-6 6 6"/></svg>
+</button>
 
-  function select(tab) {
-    tabs.forEach((t) => t.setAttribute('aria-selected', String(t === tab)));
-    panels.forEach((p) => {
-      const open = p.id === tab.getAttribute('aria-controls');
-      p.classList.toggle('is-open', open);
-      p.hidden = !open;
-    });
-  }
-
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => select(tab));
-    tab.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      e.preventDefault();
-      const next = e.key === 'ArrowRight' ? (i + 1) % tabs.length : (i - 1 + tabs.length) % tabs.length;
-      tabs[next].focus({ preventScroll: true });
-      select(tabs[next]);
-    });
-  });
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
