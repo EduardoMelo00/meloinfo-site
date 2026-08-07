@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Área do cliente — Melo Tecnologia</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../tokens.css">
+<link rel="icon" type="image/svg+xml" href="../mark.svg">
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:var(--light-bg);color:var(--light-text);font-family:var(--font-body);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:760px;margin:0 auto;padding:0 24px}
+.topbar{background:#fff;border-bottom:1px solid var(--light-line)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.9375rem}
+.sair{font-size:.8125rem;color:var(--light-text-2);background:none;border:0;cursor:pointer;font-family:inherit}
+
+.centro{max-width:400px;margin:0 auto;padding:80px 24px}
+.centro h1{font-family:var(--font-display);font-size:1.5rem;margin:0 0 10px;font-weight:600}
+.centro p{color:var(--light-text-2);font-size:.9375rem;margin:0 0 24px}
+input,textarea{font-family:inherit;font-size:.9375rem;width:100%;padding:12px 14px;border:1px solid var(--light-line);border-radius:10px;background:#fff;color:var(--light-text)}
+input:focus,textarea:focus{outline:0;border-color:var(--color-accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--color-accent);color:#fff;border:0;font-family:inherit;font-weight:600;font-size:.9375rem;padding:13px 26px;border-radius:999px;cursor:pointer;transition:background .25s}
+.btn:hover{background:var(--color-accent-hover)}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.full{width:100%;margin-top:14px}
+
+.hero{padding:44px 0 8px}
+.hero .eyebrow{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light-teal);font-weight:600;margin:0 0 10px}
+.hero h1{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2.125rem);line-height:1.15;letter-spacing:-.02em;margin:0}
+
+section{padding:32px 0;border-top:1px solid var(--light-line);margin-top:32px}
+h2{font-family:var(--font-display);font-size:1.125rem;margin:0 0 18px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
+h2 span{font-size:.8125rem;font-weight:500;color:var(--light-text-2);font-family:var(--font-body)}
+
+.trilha{display:flex;gap:8px}
+.passo{flex:1;padding:14px 12px;background:#fff;border:1px solid var(--light-line);border-radius:10px;font-size:.75rem;line-height:1.35;color:var(--light-text-2)}
+.passo.ok{background:var(--light-pill-bg);border-color:var(--light-pill-line);color:var(--light-teal-ink);font-weight:600}
+.passo.agora{background:var(--color-accent);border-color:var(--color-accent);color:#fff;font-weight:600}
+
+.req{background:#fff;border:1px solid var(--light-line);border-radius:12px;padding:18px 20px;margin-bottom:10px}
+.req.ok{background:var(--light-pill-bg);border-color:var(--light-pill-line)}
+.req .cab{display:flex;align-items:flex-start;gap:12px}
+.req .mk{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--light-line);margin-top:2px;display:grid;place-items:center;font-size:.6875rem;color:#fff}
+.req.ok .mk{background:var(--light-teal);border-color:var(--light-teal)}
+.req h3{font-family:var(--font-display);font-size:.9375rem;font-weight:600;margin:0}
+.req .opc{font-size:.6875rem;color:var(--light-text-2);font-weight:500;margin-left:6px}
+.req p{font-size:.8125rem;color:var(--light-text-2);margin:6px 0 0;line-height:1.55}
+.req .campo{margin:14px 0 0 32px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.req .campo input,.req .campo textarea{flex:1;min-width:200px}
+.req .campo .btn{padding:11px 20px;font-size:.875rem}
+.req .val{margin:8px 0 0 32px;font-size:.875rem;color:var(--light-teal-ink);font-weight:500;word-break:break-word}
+
+.linha{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#fff;border:1px solid var(--light-line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
+.linha b{font-family:var(--font-display);font-size:.9375rem;font-weight:600}
+.linha small{display:block;font-family:var(--font-body);font-size:.75rem;color:var(--light-text-2);font-weight:400;margin-top:2px}
+.linha .v{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:nowrap}
+.tag{font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
+.tag.pago{background:var(--light-pill-bg);color:var(--light-teal-ink)}
+.tag.pend{background:rgb(240,243,248);color:var(--light-text-2)}
+
+.aviso{font-size:.8125rem;color:var(--light-text-2);background:#fff;border:1px solid var(--light-line);border-left:3px solid var(--light-teal);border-radius:10px;padding:14px 16px}
+.erro{color:rgb(190,60,45);font-size:.875rem;margin-top:12px}
+footer{padding:40px 0;color:rgb(150,158,175);font-size:.75rem;text-align:center}
+.oculto{display:none}
+@media(max-width:600px){.trilha{flex-wrap:wrap}.passo{flex:1 1 45%}.req .campo,.req .val{margin-left:0}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <a class="brand" href="https://meloinfo.com.br">
+      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+        <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#5B5BF0"/><stop offset="1" stop-color="#2E7BE6"/></linearGradient></defs>
+      </svg>
+      <span>Melo Tecnologia</span>
+    </a>
+    <button class="sair oculto" id="sair">Sair</button>
+  </div>
+</div>
+
+<div id="entrar" class="centro oculto">
+  <h1>Sua área do projeto</h1>
+  <p>Digite o seu e-mail. Eu envio um link de acesso — você não precisa criar senha nem lembrar de nada.</p>
+  <input id="email" type="email" placeholder="seu@email.com" autocomplete="email">
+  <button class="btn full" id="enviarLink">Receber link de acesso</button>
+  <p class="erro oculto" id="erroEntrar"></p>
+  <p class="oculto" id="enviado" style="margin-top:18px">Pronto. Confira seu e-mail e clique no link que acabei de enviar.</p>
+</div>
+
+<div id="carregando" class="centro"><p>Carregando…</p></div>
+
+<div id="painel" class="wrap oculto">
+  <header class="hero">
+    <p class="eyebrow" id="oi"></p>
+    <h1 id="tituloProjeto"></h1>
+  </header>
+
+  <section>
+    <h2>Andamento</h2>
+    <div class="trilha" id="trilha"></div>
+  </section>
+
+  <section>
+    <h2>O que falta você me enviar <span id="contador"></span></h2>
+    <div id="requisitos"></div>
+    <p class="aviso" style="margin-top:14px">Assim que você enviar cada item eu sou avisado na hora. Não precisa me mandar mensagem confirmando.</p>
+  </section>
+
+  <section>
+    <h2>Financeiro</h2>
+    <div id="pagamentos"></div>
+  </section>
+
+  <section>
+    <h2>Contrato</h2>
+    <div class="linha">
+      <div><b>Proposta aceita</b><small>O escopo, os prazos e o valor combinados</small></div>
+      <a class="btn" id="linkProposta" style="padding:10px 20px;font-size:.875rem" target="_blank" rel="noopener">Abrir</a>
+    </div>
+  </section>
+
+  <footer>Melo Tecnologia</footer>
+</div>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+const sb = createClient(
+  'https://txcjoqvxvbrtdpvxdrqd.supabase.co',
+  'sb_publishable_eNraI9wH4uWcpSjzg4ihvA_PEl_nuCh'
+)
+
+const $ = (id) => document.getElementById(id)
+const mostrar = (id) => $(id).classList.remove('oculto')
+const esconder = (id) => $(id).classList.add('oculto')
+const moeda = (centavos) => (centavos / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+const escapar = (t) => String(t ?? '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c])
+
+let projeto = null
+
+async function iniciar() {
+  const { data: { session } } = await sb.auth.getSession()
+  esconder('carregando')
+  if (!session) return mostrar('entrar')
+  mostrar('sair')
+  await carregar()
+}
+
+$('enviarLink').addEventListener('click', async () => {
+  const email = $('email').value.trim()
+  if (!email) return
+  $('enviarLink').disabled = true
+  const { error } = await sb.auth.signInWithOtp({
+    email,
+    options: { emailRedirectTo: window.location.href }
+  })
+  $('enviarLink').disabled = false
+  if (error) {
+    $('erroEntrar').textContent = 'Não consegui enviar agora. Confira o e-mail e tente de novo.'
+    return mostrar('erroEntrar')
+  }
+  esconder('erroEntrar')
+  mostrar('enviado')
+})
+
+$('sair').addEventListener('click', async () => {
+  await sb.auth.signOut()
+  window.location.reload()
+})
+
+async function carregar() {
+  const { data: projetos } = await sb.from('projetos').select('*').limit(1)
+  projeto = projetos?.[0]
+  if (!projeto) {
+    esconder('carregando')
+    $('entrar').innerHTML = '<h1>Não encontrei seu projeto</h1><p>Esse e-mail não está vinculado a nenhum projeto. Me chame no WhatsApp que eu resolvo.</p>'
+    return mostrar('entrar')
+  }
+
+  $('oi').textContent = projeto.cliente_nome
+  $('tituloProjeto').textContent = projeto.nome
+  $('linkProposta').href = projeto.proposta_url || '#'
+
+  const { data: itens } = await sb.from('itens').select('*').order('ordem')
+  const { data: pagamentos } = await sb.from('pagamentos').select('*').order('ordem')
+
+  desenharTrilha(itens.filter((i) => i.tipo === 'etapa'))
+  desenharRequisitos(itens.filter((i) => i.tipo === 'requisito'))
+  desenharPagamentos(pagamentos ?? [])
+
+  mostrar('painel')
+}
+
+function desenharTrilha(etapas) {
+  const atual = etapas.findIndex((e) => e.status !== 'concluido')
+  $('trilha').innerHTML = etapas.map((e, i) => {
+    const classe = e.status === 'concluido' ? 'ok' : i === atual ? 'agora' : ''
+    return `<div class="passo ${classe}">${escapar(e.titulo)}</div>`
+  }).join('')
+}
+
+function desenharPagamentos(pagamentos) {
+  $('pagamentos').innerHTML = pagamentos.map((p) => `
+    <div class="linha">
+      <div>
+        <b>${escapar(p.descricao)}</b>
+        <small>${p.pago_em ? 'Pago em ' + new Date(p.pago_em + 'T12:00').toLocaleDateString('pt-BR') : 'Na entrega do projeto'}</small>
+      </div>
+      <div style="display:flex;align-items:center;gap:12px">
+        <span class="v">${moeda(p.valor_centavos)}</span>
+        <span class="tag ${p.status === 'pago' ? 'pago' : 'pend'}">${p.status === 'pago' ? 'Pago' : 'Pendente'}</span>
+      </div>
+    </div>`).join('')
+}
+
+function desenharRequisitos(reqs) {
+  const feitos = reqs.filter((r) => r.status !== 'pendente').length
+  $('contador').textContent = `${feitos} de ${reqs.length}`
+
+  $('requisitos').innerHTML = reqs.map((r) => {
+    const ok = r.status !== 'pendente'
+    return `
+      <div class="req ${ok ? 'ok' : ''}" data-id="${r.id}" data-campo="${r.campo_tipo}">
+        <div class="cab">
+          <div class="mk">${ok ? '✓' : ''}</div>
+          <div style="flex:1">
+            <h3>${escapar(r.titulo)}${r.obrigatorio ? '' : '<span class="opc">opcional</span>'}</h3>
+            ${r.descricao ? `<p>${escapar(r.descricao)}</p>` : ''}
+          </div>
+        </div>
+        ${ok ? valorEnviado(r) : campoDe(r)}
+      </div>`
+  }).join('')
+
+  document.querySelectorAll('[data-acao="salvar"]').forEach((b) => b.addEventListener('click', salvar))
+  document.querySelectorAll('[data-acao="arquivo"]').forEach((i) => i.addEventListener('change', enviarArquivo))
+}
+
+function valorEnviado(r) {
+  if (r.campo_tipo === 'arquivo') return `<div class="val">Arquivo enviado</div>`
+  if (r.campo_tipo === 'confirmacao') return `<div class="val">Confirmado</div>`
+  if (r.campo_tipo === 'moeda') return `<div class="val">${moeda(Number(r.valor_texto) || 0)}</div>`
+  return `<div class="val">${escapar(r.valor_texto)}</div>`
+}
+
+function campoDe(r) {
+  if (r.campo_tipo === 'arquivo') {
+    return `<div class="campo"><input type="file" data-acao="arquivo" data-id="${r.id}"></div>`
+  }
+  if (r.campo_tipo === 'confirmacao') {
+    return `<div class="campo"><button class="btn" data-acao="salvar" data-id="${r.id}">Já fiz isso</button></div>`
+  }
+  if (r.campo_tipo === 'instrucao') {
+    return `<div class="campo"><button class="btn" data-acao="salvar" data-id="${r.id}">Marcar como feito</button></div>`
+  }
+  const tipo = r.campo_tipo === 'moeda' ? 'number' : r.campo_tipo === 'email' ? 'email' : 'text'
+  const dica = r.campo_tipo === 'moeda' ? 'placeholder="49,90" step="0.01"' : ''
+  const longo = r.titulo.length > 30 && r.campo_tipo === 'texto' && (r.descricao ?? '').length > 120
+  const entrada = longo
+    ? `<textarea rows="3" data-id="${r.id}"></textarea>`
+    : `<input type="${tipo}" ${dica} data-id="${r.id}">`
+  return `<div class="campo">${entrada}<button class="btn" data-acao="salvar" data-id="${r.id}">Enviar</button></div>`
+}
+
+async function salvar(evento) {
+  const botao = evento.currentTarget
+  const id = botao.dataset.id
+  const entrada = document.querySelector(`.req[data-id="${id}"] input[data-id="${id}"], .req[data-id="${id}"] textarea[data-id="${id}"]`)
+  const valor = entrada ? entrada.value.trim() : 'sim'
+  if (entrada && !valor) return
+
+  botao.disabled = true
+  const { error } = await sb.from('itens')
+    .update({ valor_texto: valor, status: 'enviado', atualizado_em: new Date().toISOString() })
+    .eq('id', id)
+  botao.disabled = false
+  if (error) return alert('Não consegui salvar agora. Tente de novo em instantes.')
+  await carregar()
+}
+
+async function enviarArquivo(evento) {
+  const entrada = evento.currentTarget
+  const arquivo = entrada.files?.[0]
+  if (!arquivo) return
+  entrada.disabled = true
+
+  const nome = arquivo.name.replace(/[^\w.\-]/g, '_')
+  const caminho = `${projeto.id}/${entrada.dataset.id}-${nome}`
+  const { error: erroUpload } = await sb.storage.from('materiais').upload(caminho, arquivo, { upsert: true })
+  if (erroUpload) {
+    entrada.disabled = false
+    return alert('Não consegui enviar o arquivo. Tente de novo.')
+  }
+
+  await sb.from('itens')
+    .update({ arquivo_path: caminho, valor_texto: arquivo.name, status: 'enviado', atualizado_em: new Date().toISOString() })
+    .eq('id', entrada.dataset.id)
+  await carregar()
+}
+
+sb.auth.onAuthStateChange((evento) => {
+  if (evento === 'SIGNED_IN') window.location.hash = ''
+})
+
+iniciar()
+</script>
+
+</body>
+</html>
