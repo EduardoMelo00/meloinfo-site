@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projetos — Melo Tecnologia</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="../../tokens.css">
+<link rel="icon" type="image/svg+xml" href="../../mark.svg">
+<style>
+*{box-sizing:border-box}
+html,body{max-width:100%;overflow-x:hidden}
+body{margin:0;background:var(--light-bg);color:var(--light-text);font-family:var(--font-body);font-size:.9375rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+button{font-family:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+.top{background:#fff;border-bottom:1px solid var(--light-line);position:sticky;top:0;z-index:20}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:58px}
+.marca{display:flex;align-items:center;gap:9px;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.875rem}
+.marca em{font-style:normal;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:var(--light-text-2);border-left:1px solid var(--light-line);padding-left:9px}
+.sair{background:none;border:0;color:var(--light-text-2);font-size:.8125rem;cursor:pointer;padding:8px;border-radius:8px}
+.sair:hover{background:var(--light-bg);color:var(--light-text)}
+
+.centro{max-width:380px;margin:0 auto;padding:72px 20px}
+.centro h1{font-family:var(--font-display);font-size:1.375rem;margin:0 0 8px;font-weight:600}
+.centro p{color:var(--light-text-2);margin:0 0 20px}
+input[type=email]{font-family:inherit;font-size:1rem;width:100%;padding:13px 14px;border:1px solid var(--light-line);border-radius:10px;background:#fff}
+input[type=email]:focus{outline:0;border-color:var(--color-accent)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--color-accent);color:#fff;border:0;font-weight:600;font-size:.875rem;padding:12px 22px;border-radius:999px;cursor:pointer;transition:background .2s,transform .15s;min-height:44px}
+.btn:hover{background:var(--color-accent-hover)}
+.btn:active{transform:translateY(1px)}
+.btn:disabled{opacity:.5;cursor:wait}
+.btn.full{width:100%;margin-top:12px}
+.btn.fant{background:#fff;color:var(--light-text);border:1px solid var(--light-line);font-weight:500}
+.btn.fant:hover{background:var(--light-bg)}
+.msg{padding:12px 14px;border-radius:10px;font-size:.875rem;margin-top:14px}
+.msg.erro{background:rgb(254,242,240);color:rgb(158,50,38)}
+.msg.ok{background:var(--light-pill-bg);color:var(--light-teal-ink)}
+
+.cab{padding:26px 0 18px}
+.cab h1{font-family:var(--font-display);font-size:1.5rem;letter-spacing:-.02em;margin:0;font-weight:600}
+.cab p{color:var(--light-text-2);margin:4px 0 0;font-size:.875rem}
+
+.cards{display:grid;gap:10px;padding-bottom:40px}
+.card{background:#fff;border:1px solid var(--light-line);border-radius:14px;padding:18px 20px;display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;cursor:pointer;text-align:left;width:100%;border-width:1px;transition:border-color .2s,box-shadow .2s,transform .15s}
+.card:hover{border-color:rgb(206,214,228);box-shadow:0 4px 16px rgba(19,21,32,.06);transform:translateY(-1px)}
+.card b{display:block;font-family:var(--font-display);font-size:1rem;font-weight:600;line-height:1.3}
+.card small{display:block;color:var(--light-text-2);font-size:.8125rem;margin-top:2px}
+.card .num{font-family:var(--font-display);font-size:1.125rem;font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.card .num i{display:block;font-style:normal;font-size:.625rem;letter-spacing:.1em;text-transform:uppercase;color:var(--light-text-2);font-weight:600;margin-top:2px}
+.pill{display:inline-block;font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;background:var(--light-pill-bg);color:var(--light-teal-ink);margin-top:8px}
+.pill.esp{background:rgb(255,247,229);color:rgb(146,94,4)}
+
+.voltar{background:none;border:0;color:var(--light-text-2);font-size:.8125rem;cursor:pointer;padding:8px 0;display:inline-flex;align-items:center;gap:6px}
+.voltar:hover{color:var(--light-text)}
+
+.bloco{background:#fff;border:1px solid var(--light-line);border-radius:14px;margin-bottom:14px;overflow:hidden}
+.bloco>h2{font-family:var(--font-display);font-size:.9375rem;font-weight:600;margin:0;padding:15px 20px;border-bottom:1px solid var(--light-line);display:flex;justify-content:space-between;align-items:center;gap:12px}
+.bloco>h2 span{font-family:var(--font-body);font-size:.75rem;font-weight:500;color:var(--light-text-2)}
+
+.lin{padding:15px 20px;border-bottom:1px solid var(--light-line);display:grid;grid-template-columns:22px 1fr auto;gap:12px;align-items:start}
+.lin:last-child{border-bottom:0}
+.lin.vazio{color:var(--light-text-2);grid-template-columns:1fr;font-size:.875rem}
+.mk{width:20px;height:20px;border-radius:50%;border:1.5px solid var(--light-line);display:grid;place-items:center;margin-top:1px}
+.mk.ok{background:var(--light-teal);border-color:var(--light-teal)}
+.mk svg{width:11px;height:11px;stroke:#fff;stroke-width:3;fill:none}
+.lin b{display:block;font-size:.875rem;font-weight:600;line-height:1.35}
+.lin .resp{margin-top:5px;font-size:.875rem;color:var(--light-teal-ink);background:var(--light-pill-bg);border-radius:8px;padding:8px 11px;white-space:pre-line;overflow-wrap:anywhere}
+.lin .quando{font-size:.6875rem;color:var(--light-text-2);margin-top:5px}
+.lin .acao{display:flex;gap:8px;align-items:center}
+.mini{font-size:.75rem;padding:7px 13px;min-height:36px;border-radius:999px}
+.val{font-family:var(--font-display);font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.etapas{display:flex;flex-wrap:wrap;gap:8px;padding:16px 20px}
+.et{border:1px solid var(--light-line);background:#fff;border-radius:999px;padding:8px 15px;font-size:.8125rem;cursor:pointer;min-height:38px;transition:all .2s}
+.et:hover{border-color:var(--color-accent);color:var(--color-accent)}
+.et.feita{background:var(--light-pill-bg);border-color:var(--light-pill-line);color:var(--light-teal-ink);font-weight:600}
+.et.agora{background:var(--color-accent);border-color:var(--color-accent);color:#fff;font-weight:600}
+
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px}
+.oculto{display:none}
+@media(max-width:620px){.lin{grid-template-columns:22px 1fr}.lin .acao{grid-column:2;margin-top:8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="top">
+  <div class="wrap">
+    <a class="marca" href="https://meloinfo.com.br">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect width="32" height="32" rx="8" fill="url(#bg)"/>
+        <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <defs><linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#5B5BF0"/><stop offset="1" stop-color="#2E7BE6"/></linearGradient></defs>
+      </svg>
+      <span>Melo Tecnologia</span><em>Projetos</em>
+    </a>
+    <button class="sair oculto" id="sair">Sair</button>
+  </div>
+</div>
+
+<div id="entrar" class="centro oculto">
+  <h1>Entrar</h1>
+  <p>Digite seu e-mail de administrador. Um link de acesso é enviado na hora.</p>
+  <input id="email" type="email" placeholder="voce@email.com" autocomplete="email">
+  <button class="btn full" id="enviarLink">Receber link</button>
+  <div class="msg erro oculto" id="erroEntrar"></div>
+  <div class="msg ok oculto" id="enviado">Pronto. Confira seu e-mail.</div>
+</div>
+
+<div id="negado" class="centro oculto">
+  <h1>Sem acesso</h1>
+  <p>Esse e-mail não está na lista de administradores.</p>
+  <button class="btn fant full" id="sairNegado">Sair</button>
+</div>
+
+<div id="carregando" class="centro"><p>Carregando…</p></div>
+
+<div id="lista" class="wrap oculto">
+  <div class="cab">
+    <h1>Projetos</h1>
+    <p id="resumoGeral"></p>
+  </div>
+  <div class="cards" id="cards"></div>
+</div>
+
+<div id="detalhe" class="wrap oculto">
+  <div class="cab">
+    <button class="voltar" id="voltar">← Todos os projetos</button>
+    <h1 id="dNome"></h1>
+    <p id="dCliente"></p>
+  </div>
+
+  <div class="bloco">
+    <h2>Etapa do projeto <span>clique para mover</span></h2>
+    <div class="etapas" id="dEtapas"></div>
+  </div>
+
+  <div class="bloco">
+    <h2>Recebido <span id="dContRec"></span></h2>
+    <div id="dRecebidos"></div>
+  </div>
+
+  <div class="bloco">
+    <h2>Ainda falta <span id="dContPend"></span></h2>
+    <div id="dPendentes"></div>
+  </div>
+
+  <div class="bloco" style="margin-bottom:40px">
+    <h2>Financeiro <span id="dTotal"></span></h2>
+    <div id="dPagamentos"></div>
+  </div>
+</div>
+
+<script type="module">
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2'
+
+const sb = createClient(
+  'https://txcjoqvxvbrtdpvxdrqd.supabase.co',
+  'sb_publishable_eNraI9wH4uWcpSjzg4ihvA_PEl_nuCh'
+)
+
+const $ = (id) => document.getElementById(id)
+const ver = (id) => $(id).classList.remove('oculto')
+const sumir = (id) => $(id).classList.add('oculto')
+const escapar = (t) => String(t ?? '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c])
+const moeda = (c) => (c / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
+const dia = (d) => d ? new Date(d).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short' }) : ''
+const CHECK = '<svg viewBox="0 0 24 24"><path d="M4 12.5 9.5 18 20 6.5"/></svg>'
+
+let projetos = []
+let atual = null
+
+async function iniciar() {
+  const { data: { session } } = await sb.auth.getSession()
+  sumir('carregando')
+  if (!session) return ver('entrar')
+
+  const { data: ehAdmin } = await sb.rpc('e_admin')
+  if (!ehAdmin) return ver('negado')
+
+  ver('sair')
+  await carregarLista()
+}
+
+$('enviarLink').addEventListener('click', async () => {
+  const email = $('email').value.trim()
+  if (!email) return
+  $('enviarLink').disabled = true
+  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: window.location.href } })
+  $('enviarLink').disabled = false
+  if (error) { $('erroEntrar').textContent = 'Não consegui enviar agora.'; return ver('erroEntrar') }
+  sumir('erroEntrar'); ver('enviado')
+})
+
+for (const id of ['sair', 'sairNegado']) {
+  $(id).addEventListener('click', async () => { await sb.auth.signOut(); location.reload() })
+}
+$('voltar').addEventListener('click', () => { sumir('detalhe'); ver('lista') })
+
+async function carregarLista() {
+  const { data: ps } = await sb.from('projetos').select('*').order('criado_em', { ascending: false })
+  const { data: itens } = await sb.from('itens').select('*')
+  projetos = (ps ?? []).map((p) => {
+    const reqs = itens.filter((i) => i.projeto_id === p.id && i.tipo === 'requisito')
+    const etapas = itens.filter((i) => i.projeto_id === p.id && i.tipo === 'etapa').sort((a, b) => a.ordem - b.ordem)
+    const idx = etapas.findIndex((e) => e.status !== 'concluido')
+    return {
+      ...p,
+      reqs, etapas,
+      feitos: reqs.filter((r) => r.status !== 'pendente').length,
+      total: reqs.length,
+      etapa: etapas[idx === -1 ? etapas.length - 1 : idx]?.titulo ?? '—',
+      novos: reqs.filter((r) => r.status === 'enviado').length
+    }
+  })
+
+  const pendentes = projetos.reduce((s, p) => s + (p.total - p.feitos), 0)
+  $('resumoGeral').textContent = `${projetos.length} projeto${projetos.length === 1 ? '' : 's'} · ${pendentes} item${pendentes === 1 ? '' : 'ns'} aguardando o cliente`
+
+  $('cards').innerHTML = projetos.map((p, i) => `
+    <button class="card" data-i="${i}">
+      <span>
+        <b>${escapar(p.nome)}</b>
+        <small>${escapar(p.cliente_nome)} · ${escapar(p.etapa)}</small>
+        ${p.novos ? `<span class="pill">${p.novos} nov${p.novos === 1 ? 'o' : 'os'}</span>` : ''}
+      </span>
+      <span class="num">${p.feitos}/${p.total}<i>materiais</i></span>
+    </button>`).join('')
+
+  document.querySelectorAll('.card').forEach((b) => b.addEventListener('click', () => abrir(Number(b.dataset.i))))
+  sumir('detalhe'); ver('lista')
+}
+
+async function abrir(i) {
+  atual = projetos[i]
+  $('dNome').textContent = atual.nome
+  $('dCliente').textContent = `${atual.cliente_nome} · ${atual.cliente_email}`
+
+  const idx = atual.etapas.findIndex((e) => e.status !== 'concluido')
+  $('dEtapas').innerHTML = atual.etapas.map((e, n) => {
+    const classe = e.status === 'concluido' ? 'feita' : n === idx ? 'agora' : ''
+    return `<button class="et ${classe}" data-id="${e.id}" data-st="${e.status}">${escapar(e.titulo)}</button>`
+  }).join('')
+  document.querySelectorAll('.et').forEach((b) => b.addEventListener('click', moverEtapa))
+
+  const reqs = [...atual.reqs].sort((a, b) => a.ordem - b.ordem)
+  const rec = reqs.filter((r) => r.status !== 'pendente')
+  const pen = reqs.filter((r) => r.status === 'pendente')
+
+  $('dContRec').textContent = `${rec.length} de ${reqs.length}`
+  $('dContPend').textContent = pen.length ? `${pen.length} item${pen.length === 1 ? '' : 'ns'}` : 'nada'
+
+  $('dRecebidos').innerHTML = rec.length ? rec.map((r) => `
+    <div class="lin">
+      <span class="mk ok">${CHECK}</span>
+      <span>
+        <b>${escapar(r.titulo)}</b>
+        <span class="resp">${escapar(valorDe(r))}</span>
+        <span class="quando">${r.atualizado_em ? 'enviado em ' + dia(r.atualizado_em) : ''}</span>
+      </span>
+      <span class="acao">${r.arquivo_path ? `<button class="btn mini" data-arq="${escapar(r.arquivo_path)}">Baixar</button>` : ''}</span>
+    </div>`).join('') : '<div class="lin vazio">Nada recebido ainda.</div>'
+
+  document.querySelectorAll('[data-arq]').forEach((b) => b.addEventListener('click', baixar))
+
+  $('dPendentes').innerHTML = pen.length ? pen.map((r) => `
+    <div class="lin">
+      <span class="mk"></span>
+      <span><b>${escapar(r.titulo)}</b>${r.obrigatorio ? '' : '<span class="quando">opcional</span>'}</span>
+      <span></span>
+    </div>`).join('') : '<div class="lin vazio">Tudo recebido.</div>'
+
+  const { data: pags } = await sb.from('pagamentos').select('*').eq('projeto_id', atual.id).order('ordem')
+  const recebido = (pags ?? []).filter((p) => p.status === 'pago').reduce((s, p) => s + p.valor_centavos, 0)
+  const total = (pags ?? []).reduce((s, p) => s + p.valor_centavos, 0)
+  $('dTotal').textContent = `${moeda(recebido)} de ${moeda(total)}`
+
+  $('dPagamentos').innerHTML = (pags ?? []).map((p) => `
+    <div class="lin" style="grid-template-columns:1fr auto">
+      <span>
+        <b>${escapar(p.descricao)}</b>
+        <span class="quando">${p.status === 'pago' ? 'pago em ' + dia(p.pago_em) : 'pendente'}</span>
+      </span>
+      <span class="acao">
+        <span class="val">${moeda(p.valor_centavos)}</span>
+        ${p.status === 'pago' ? '' : `<button class="btn mini" data-pag="${p.id}">Marcar pago</button>`}
+      </span>
+    </div>`).join('')
+
+  document.querySelectorAll('[data-pag]').forEach((b) => b.addEventListener('click', quitar))
+
+  sumir('lista'); ver('detalhe'); window.scrollTo(0, 0)
+}
+
+function valorDe(r) {
+  if (r.campo_tipo === 'confirmacao' || r.campo_tipo === 'instrucao') return 'Confirmado pelo cliente'
+  if (r.campo_tipo === 'moeda') return moeda(Math.round(Number(r.valor_texto || 0) * 100))
+  return r.valor_texto || '—'
+}
+
+async function baixar(ev) {
+  const b = ev.currentTarget
+  b.disabled = true
+  const { data, error } = await sb.storage.from('materiais').createSignedUrl(b.dataset.arq, 120)
+  b.disabled = false
+  if (error || !data) return alert('Não consegui gerar o link do arquivo.')
+  window.open(data.signedUrl, '_blank', 'noopener')
+}
+
+async function moverEtapa(ev) {
+  const b = ev.currentTarget
+  const novo = b.dataset.st === 'concluido' ? 'pendente' : 'concluido'
+  b.disabled = true
+  const { error } = await sb.from('itens').update({ status: novo, atualizado_em: new Date().toISOString() }).eq('id', b.dataset.id)
+  if (error) { b.disabled = false; return alert('Não consegui atualizar a etapa.') }
+  await carregarLista()
+  abrir(projetos.findIndex((p) => p.id === atual.id))
+}
+
+async function quitar(ev) {
+  const b = ev.currentTarget
+  if (!confirm('Marcar este pagamento como recebido?')) return
+  b.disabled = true
+  const { error } = await sb.from('pagamentos')
+    .update({ status: 'pago', pago_em: new Date().toISOString().slice(0, 10) })
+    .eq('id', b.dataset.pag)
+  if (error) { b.disabled = false; return alert('Não consegui atualizar o pagamento.') }
+  abrir(projetos.findIndex((p) => p.id === atual.id))
+}
+
+sb.auth.onAuthStateChange((e) => { if (e === 'SIGNED_IN') history.replaceState(null, '', location.pathname) })
+
+iniciar()
+</script>
+
+</body>
+</html>

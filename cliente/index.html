@@ -2,9 +2,10 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Área do cliente — Melo Tecnologia</title>
 <meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap">
@@ -12,123 +13,361 @@
 <link rel="icon" type="image/svg+xml" href="../mark.svg">
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:var(--light-bg);color:var(--light-text);font-family:var(--font-body);font-size:1rem;line-height:1.65;-webkit-font-smoothing:antialiased}
+html,body{max-width:100%;overflow-x:hidden}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--light-bg);color:var(--light-text);font-family:var(--font-body);font-size:1rem;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 a{color:inherit}
-.wrap{max-width:760px;margin:0 auto;padding:0 24px}
-.topbar{background:#fff;border-bottom:1px solid var(--light-line)}
-.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.9375rem}
-.sair{font-size:.8125rem;color:var(--light-text-2);background:none;border:0;cursor:pointer;font-family:inherit}
+.oculto{display:none!important}
+b,strong{font-weight:600}
 
-.centro{max-width:400px;margin:0 auto;padding:80px 24px}
-.centro h1{font-family:var(--font-display);font-size:1.5rem;margin:0 0 10px;font-weight:600}
-.centro p{color:var(--light-text-2);font-size:.9375rem;margin:0 0 24px}
-input,textarea{font-family:inherit;font-size:.9375rem;width:100%;padding:12px 14px;border:1px solid var(--light-line);border-radius:10px;background:#fff;color:var(--light-text)}
-input:focus,textarea:focus{outline:0;border-color:var(--color-accent)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--color-accent);color:#fff;border:0;font-family:inherit;font-weight:600;font-size:.9375rem;padding:13px 26px;border-radius:999px;cursor:pointer;transition:background .25s}
-.btn:hover{background:var(--color-accent-hover)}
-.btn:disabled{opacity:.5;cursor:wait}
-.btn.full{width:100%;margin-top:14px}
+:root{
+  --h-topo:52px;
+  --r-card:14px;
+  --r-ctl:10px;
+  --wash:rgb(246,248,251);
+  --wash-2:rgb(240,243,248);
+  --line-forte:rgb(212,218,229);
+  --ink-3:rgb(139,148,166);
+  --sh-1:0 1px 2px rgba(19,21,32,.045);
+  --sh-2:0 1px 2px rgba(19,21,32,.05),0 10px 22px -14px rgba(19,21,32,.3);
+  --sh-3:0 1px 2px rgba(19,21,32,.05),0 22px 44px -26px rgba(19,21,32,.45);
+  --anel:0 0 0 3px rgba(47,107,255,.16);
+}
+:focus-visible{outline:2px solid var(--color-accent);outline-offset:2px;border-radius:8px}
+@keyframes girar{to{transform:rotate(360deg)}}
+@keyframes surgir{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
 
-.hero{padding:44px 0 8px}
-.hero .eyebrow{font-size:.6875rem;letter-spacing:.14em;text-transform:uppercase;color:var(--light-teal);font-weight:600;margin:0 0 10px}
-.hero h1{font-family:var(--font-display);font-size:clamp(1.5rem,3.4vw,2.125rem);line-height:1.15;letter-spacing:-.02em;margin:0}
+/* ---------- barra de topo ---------- */
+.topo{position:sticky;top:0;z-index:30;height:var(--h-topo);background:rgba(255,255,255,.88);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-bottom:1px solid var(--light-line)}
+.topo-in{max-width:1120px;margin:0 auto;padding:0 16px;height:var(--h-topo);display:flex;align-items:center;gap:12px}
+.marca{display:flex;align-items:center;gap:9px;min-height:44px;text-decoration:none;font-family:var(--font-display);font-weight:600;font-size:.875rem;letter-spacing:-.005em;white-space:nowrap;transition:opacity var(--dur-short) var(--ease-out)}
+.marca:hover{opacity:.7}
+.topo-fim{margin-left:auto;display:flex;align-items:center;gap:10px}
+.doc{display:none;font-size:.6875rem;letter-spacing:.12em;text-transform:uppercase;color:var(--light-text-2);font-weight:500}
+.sair{display:inline-flex;align-items:center;min-height:44px;padding:0 11px;margin:0 -3px;border-radius:9px;font-size:.8125rem;font-weight:500;color:var(--light-text-2);background:none;border:1px solid transparent;cursor:pointer;font-family:inherit;transition:color var(--dur-short) var(--ease-out),background var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}
+.sair:hover{color:var(--light-text);background:var(--wash);border-color:var(--light-line)}
+.sair:active{background:var(--wash-2)}
 
-section{padding:32px 0;border-top:1px solid var(--light-line);margin-top:32px}
-h2{font-family:var(--font-display);font-size:1.125rem;margin:0 0 18px;font-weight:600;display:flex;justify-content:space-between;align-items:baseline;gap:14px}
-h2 span{font-size:.8125rem;font-weight:500;color:var(--light-text-2);font-family:var(--font-body)}
+/* ---------- login ---------- */
+.centro{max-width:420px;margin:44px auto;padding:0 20px}
+.cartao{background:#fff;border:1px solid var(--light-line);border-radius:var(--radius-lg);padding:28px 24px;box-shadow:var(--sh-3)}
+.centro h1{font-family:var(--font-display);font-size:1.375rem;line-height:1.2;letter-spacing:-.02em;margin:0 0 8px;font-weight:600}
+.centro p{color:var(--light-text-2);font-size:.9375rem;line-height:1.6;margin:0 0 22px}
+.chave{width:40px;height:40px;border-radius:11px;background:var(--light-pill-bg);border:1px solid var(--light-pill-line);color:var(--light-teal-ink);display:grid;place-items:center;margin-bottom:16px}
+.centro .erro,.centro .ok-msg{display:flex;gap:8px;margin:14px 0 0;font-size:.875rem;line-height:1.5;border-radius:var(--r-ctl);padding:11px 13px;animation:surgir var(--dur-short) var(--ease-out)}
+.centro .erro{color:rgb(168,46,34);background:rgb(253,244,242);border:1px solid rgb(245,213,207);border-left:3px solid rgb(202,64,49)}
+.centro .ok-msg{color:var(--light-teal-ink);background:var(--light-pill-bg);border:1px solid var(--light-pill-line);border-left:3px solid var(--light-teal)}
+.carregando{margin-top:88px}
+.carregando p{color:var(--ink-3);font-size:.9375rem;text-align:center;margin:0}
 
-.trilha{display:flex;gap:8px}
-.passo{flex:1;padding:14px 12px;background:#fff;border:1px solid var(--light-line);border-radius:10px;font-size:.75rem;line-height:1.35;color:var(--light-text-2)}
-.passo.ok{background:var(--light-pill-bg);border-color:var(--light-pill-line);color:var(--light-teal-ink);font-weight:600}
-.passo.agora{background:var(--color-accent);border-color:var(--color-accent);color:#fff;font-weight:600}
+/* ---------- controles ---------- */
+label{display:block;font-size:.8125rem;font-weight:600;letter-spacing:-.005em;margin:0 0 7px}
+input,textarea{font-family:inherit;font-size:1rem;width:100%;padding:11px 13px;min-height:48px;border:1px solid var(--line-forte);border-radius:var(--r-ctl);background:#fff;color:var(--light-text);transition:border-color var(--dur-short) var(--ease-out),box-shadow var(--dur-short) var(--ease-out)}
+input::placeholder,textarea::placeholder{color:rgb(158,166,182)}
+input:hover,textarea:hover{border-color:rgb(190,198,213)}
+input:focus,textarea:focus{outline:0;border-color:var(--color-accent);box-shadow:var(--anel)}
+textarea{min-height:92px;line-height:1.55;resize:vertical}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--color-accent);color:#fff;border:1px solid transparent;font-family:inherit;font-weight:600;font-size:.9375rem;line-height:1;min-height:48px;padding:0 20px;border-radius:var(--r-ctl);cursor:pointer;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(19,21,32,.12);transition:background var(--dur-short) var(--ease-out),box-shadow var(--dur-short) var(--ease-out),transform var(--dur-short) var(--ease-out)}
+.btn:hover{background:var(--color-accent-hover);box-shadow:0 2px 6px rgba(47,107,255,.28)}
+.btn:active{transform:translateY(1px);box-shadow:0 1px 1px rgba(19,21,32,.12)}
+.btn:disabled{color:transparent;cursor:progress;box-shadow:none;transform:none}
+.btn:disabled::after{content:"";position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:2px solid rgba(255,255,255,.38);border-top-color:#fff;animation:girar .7s linear infinite}
+.btn.full{width:100%;margin-top:16px}
+.btn.ghost{background:#fff;color:var(--light-text);border-color:var(--line-forte);font-size:.875rem;min-height:44px;padding:0 16px;box-shadow:var(--sh-1)}
+.btn.ghost:hover{background:var(--wash);border-color:rgb(192,200,215);box-shadow:var(--sh-1)}
 
-.req{background:#fff;border:1px solid var(--light-line);border-radius:12px;padding:18px 20px;margin-bottom:10px}
-.req.ok{background:var(--light-pill-bg);border-color:var(--light-pill-line)}
-.req .cab{display:flex;align-items:flex-start;gap:12px}
-.req .mk{flex:none;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--light-line);margin-top:2px;display:grid;place-items:center;font-size:.6875rem;color:#fff}
-.req.ok .mk{background:var(--light-teal);border-color:var(--light-teal)}
-.req h3{font-family:var(--font-display);font-size:.9375rem;font-weight:600;margin:0}
-.req .opc{font-size:.6875rem;color:var(--light-text-2);font-weight:500;margin-left:6px}
-.req p{font-size:.8125rem;color:var(--light-text-2);margin:6px 0 0;line-height:1.55}
-.req .campo{margin:14px 0 0 32px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}
-.req .campo input,.req .campo textarea{flex:1;min-width:200px}
-.req .campo .btn{padding:11px 20px;font-size:.875rem}
-.req .val{margin:8px 0 0 32px;font-size:.875rem;color:var(--light-teal-ink);font-weight:500;word-break:break-word}
+/* ---------- faixa de estado (sempre visível) ---------- */
+.estado{position:sticky;top:var(--h-topo);z-index:20;background:#fff;border-bottom:1px solid var(--light-line);box-shadow:0 1px 0 rgba(19,21,32,.02),0 6px 12px -12px rgba(19,21,32,.4)}
+.estado-in{max-width:1120px;margin:0 auto;padding:11px 16px 13px;display:grid;gap:9px}
+.proj{min-width:0}
+.proj b{display:block;font-family:var(--font-display);font-size:1rem;font-weight:600;line-height:1.25;letter-spacing:-.015em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.proj>span{display:block;margin-top:1px;font-size:.75rem;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.celas{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.cela{position:relative;min-width:0;padding-left:11px}
+.cela::before{content:"";position:absolute;left:0;top:2px;bottom:2px;width:2px;border-radius:999px;background:var(--light-line)}
+.cela>span{display:block;font-size:.625rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:600}
+.cela>b{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;margin-top:2px;font-family:var(--font-display);font-size:.9375rem;font-weight:600;line-height:1.3;letter-spacing:-.01em;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.cela.viva::before{background:var(--color-accent)}
+.barra{grid-column:1/-1;height:5px;border-radius:999px;background:rgb(232,236,244);box-shadow:inset 0 0 0 1px rgba(19,21,32,.03);overflow:hidden}
+.mini{grid-column:1/-1;list-style:none;margin:0;padding:2px 0 0;display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
+.mini li{position:relative;min-width:0;padding-top:16px;text-align:center}
+.mini li::before{content:"";position:absolute;top:4px;left:calc(50% + 7px);right:calc(-50% + 7px);height:2px;border-radius:999px;background:rgb(226,231,240)}
+.mini li:last-child::before{display:none}
+.mini li::after{content:"";position:absolute;top:0;left:50%;margin-left:-5px;width:10px;height:10px;border-radius:50%;background:#fff;box-shadow:inset 0 0 0 2px rgb(214,220,232);transition:background var(--dur-medium) var(--ease-out),box-shadow var(--dur-medium) var(--ease-out)}
+.mini li.feito::before,.mini li.feito+li::before{background:var(--light-teal)}
+.mini li.feito::after{background:var(--light-teal);box-shadow:inset 0 0 0 2px var(--light-teal)}
+.mini li.agora::after{background:var(--color-accent);box-shadow:inset 0 0 0 2px var(--color-accent);animation:pulsar 2.2s var(--ease-out) infinite}
+@keyframes pulsar{0%{box-shadow:0 0 0 0 rgba(47,107,255,.42),inset 0 0 0 2px var(--color-accent)}70%{box-shadow:0 0 0 8px rgba(47,107,255,0),inset 0 0 0 2px var(--color-accent)}100%{box-shadow:0 0 0 0 rgba(47,107,255,0),inset 0 0 0 2px var(--color-accent)}}
+.mini span{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;padding:0 3px;font-size:.625rem;line-height:1.25;color:var(--ink-3);overflow-wrap:anywhere}
+.mini li.agora span{color:var(--color-accent);font-weight:700}
+.mini li.feito span{color:var(--light-teal-ink)}
+@media(prefers-reduced-motion:reduce){.mini li::after{transition:none}.mini li.agora::after{animation:none;box-shadow:0 0 0 3px rgba(47,107,255,.16),inset 0 0 0 2px var(--color-accent)}}
+.barra i{display:block;height:100%;width:0;border-radius:999px;background:var(--light-teal);transition:width var(--dur-medium) var(--ease-out)}
 
-.linha{display:flex;justify-content:space-between;align-items:center;gap:14px;background:#fff;border:1px solid var(--light-line);border-radius:12px;padding:16px 20px;margin-bottom:10px}
-.linha b{font-family:var(--font-display);font-size:.9375rem;font-weight:600}
-.linha small{display:block;font-family:var(--font-body);font-size:.75rem;color:var(--light-text-2);font-weight:400;margin-top:2px}
-.linha .v{font-family:var(--font-display);font-size:1rem;font-weight:600;white-space:nowrap}
-.tag{font-size:.625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px}
-.tag.pago{background:var(--light-pill-bg);color:var(--light-teal-ink)}
-.tag.pend{background:rgb(240,243,248);color:var(--light-text-2)}
+/* ---------- estrutura ---------- */
+.app{max-width:1120px;margin:0 auto;padding:0 16px 24px}
+.conteudo{padding:18px 0 8px;min-width:0}
+.pnl-topo{margin:0 0 16px;padding-bottom:13px;border-bottom:1px solid var(--light-line)}
+.pnl-topo h2{font-family:var(--font-display);font-size:1.125rem;font-weight:600;letter-spacing:-.02em;line-height:1.25;margin:0}
+.pnl-topo p{margin:4px 0 0;font-size:.8125rem;line-height:1.5;color:var(--light-text-2)}
+.sec{font-family:var(--font-body);font-size:.6875rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin:26px 0 9px}
+footer{margin-top:28px;padding:18px 0 8px;border-top:1px solid var(--light-line);color:var(--ink-3);font-size:.6875rem;letter-spacing:.02em}
 
-.aviso{font-size:.8125rem;color:var(--light-text-2);background:#fff;border:1px solid var(--light-line);border-left:3px solid var(--light-teal);border-radius:10px;padding:14px 16px}
-.erro{color:rgb(190,60,45);font-size:.875rem;margin-top:12px}
-footer{padding:40px 0;color:rgb(150,158,175);font-size:.75rem;text-align:center}
-.oculto{display:none}
-@media(max-width:600px){.trilha{flex-wrap:wrap}.passo{flex:1 1 45%}.req .campo,.req .val{margin-left:0}}
+/* ---------- navegação ---------- */
+.nav{position:fixed;left:0;right:0;bottom:0;z-index:25;display:grid;grid-template-columns:repeat(3,1fr);background:rgba(255,255,255,.94);backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);border-top:1px solid var(--light-line);padding-bottom:env(safe-area-inset-bottom)}
+.aba{position:relative;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;min-height:58px;padding:7px 4px;background:none;border:0;font-family:inherit;font-size:.6875rem;font-weight:600;letter-spacing:-.005em;color:var(--light-text-2);cursor:pointer;-webkit-tap-highlight-color:transparent;transition:color var(--dur-short) var(--ease-out)}
+.aba::before{content:"";position:absolute;top:0;left:50%;width:0;height:2px;border-radius:0 0 2px 2px;background:var(--color-accent);transform:translateX(-50%);transition:width var(--dur-short) var(--ease-out)}
+.aba.ativa::before{width:26px}
+.aba:focus-visible{outline-offset:-3px}
+.aba svg{width:21px;height:21px;transition:transform var(--dur-short) var(--ease-out)}
+.aba:active svg{transform:scale(.92)}
+.aba.ativa{color:var(--color-accent)}
+.selo{position:absolute;top:6px;left:50%;margin-left:7px;min-width:18px;height:18px;padding:0 5px;border-radius:999px;background:var(--color-accent);color:#fff;font-size:.625rem;font-weight:700;line-height:18px;text-align:center;font-variant-numeric:tabular-nums;box-shadow:0 0 0 2px #fff}
+.aba.pronta .selo{background:var(--light-teal)}
+
+/* ---------- lista de itens ---------- */
+.recebido{display:flex;gap:11px;align-items:flex-start;background:var(--light-pill-bg);border:1px solid var(--light-pill-line);border-left:3px solid var(--light-teal);border-radius:var(--r-card);padding:13px 15px;margin-bottom:14px;color:var(--light-teal-ink);font-size:.875rem;line-height:1.5;animation:surgir var(--dur-medium) var(--ease-out)}
+.recebido .mk{flex:none;width:20px;height:20px;border-radius:50%;background:var(--light-teal);color:#fff;display:grid;place-items:center;margin-top:1px}
+.recebido b{display:block;color:var(--light-text);letter-spacing:-.005em;overflow-wrap:anywhere}
+.recebido span{display:block;margin-top:2px}
+
+.req{background:#fff;border:1px solid var(--light-line);border-radius:var(--r-card);margin-bottom:9px;box-shadow:var(--sh-1);transition:box-shadow var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}
+.req>summary{display:flex;gap:11px;align-items:center;min-height:56px;padding:13px 15px;cursor:pointer;list-style:none;border-radius:13px;-webkit-tap-highlight-color:transparent;transition:background var(--dur-short) var(--ease-out)}
+.req>summary::-webkit-details-marker{display:none}
+.req>summary:hover{background:var(--wash)}
+.req>summary:active{background:var(--wash-2)}
+.req>summary:focus-visible{outline-offset:-2px}
+.req[open]{box-shadow:var(--sh-2)}
+.req[open]>summary{border-radius:13px 13px 0 0}
+.req.prox{border-color:rgb(180,200,241)}
+.ord{flex:none;width:22px;height:22px;border-radius:7px;background:var(--wash-2);border:1px solid var(--light-line);color:var(--light-text-2);font-family:var(--font-display);font-size:.6875rem;font-weight:600;display:grid;place-items:center;font-variant-numeric:tabular-nums;transition:background var(--dur-short) var(--ease-out)}
+.req.prox .ord{background:var(--color-accent);border-color:var(--color-accent);color:#fff;box-shadow:0 1px 2px rgba(47,107,255,.35)}
+.it-tit{flex:1;min-width:0;font-family:var(--font-display);font-size:.9375rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;overflow-wrap:anywhere}
+.marca-prox{display:block;font-family:var(--font-body);font-size:.625rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--color-accent);margin-top:3px}
+.opc{display:inline-block;font-family:var(--font-body);font-size:.5625rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);background:var(--wash-2);border:1px solid var(--light-line);padding:2px 7px;border-radius:999px;margin-left:7px;vertical-align:2px}
+.chev{flex:none;margin-right:-2px;color:rgb(163,171,187);display:grid;place-items:center;transition:transform var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
+summary:hover .chev{color:var(--light-text-2)}
+.req[open] .chev{transform:rotate(180deg)}
+.it-corpo{padding:14px 15px 15px;border-top:1px solid var(--light-line)}
+.it-desc{font-size:.875rem;color:var(--light-text-2);margin:0;line-height:1.6;white-space:pre-line;overflow-wrap:anywhere}
+.it-desc strong{color:var(--light-text);font-weight:600}
+.campo{display:flex;gap:9px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.it-corpo>.campo:first-child{margin-top:0}
+.campo input,.campo textarea{flex:1 1 180px;min-width:0}
+.arquivo{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:48px;padding:0 18px;border:1px dashed var(--light-pill-line);border-radius:var(--r-ctl);background:var(--light-pill-bg);color:var(--light-teal-ink);font-size:.9375rem;font-weight:600;cursor:pointer;transition:background var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}
+.arquivo:hover{background:#fff;border-color:var(--light-teal);border-style:solid}
+.arquivo:active{background:var(--light-teal-ghost)}
+.arquivo:focus-within{outline:2px solid var(--color-accent);outline-offset:2px}
+.arquivo input{position:absolute;inset:0;width:100%;height:100%;min-height:0;padding:0;border:0;opacity:0;cursor:pointer}
+.arquivo:has(input:disabled){color:transparent;cursor:progress;background:var(--light-pill-bg);border-style:solid}
+.arquivo:has(input:disabled)::after{content:"";position:absolute;top:50%;left:50%;width:16px;height:16px;margin:-8px 0 0 -8px;border-radius:50%;border:2px solid rgba(13,110,138,.25);border-top-color:var(--light-teal-ink);animation:girar .7s linear infinite}
+
+.feitos{margin-top:16px;background:#fff;border:1px solid var(--light-line);border-radius:var(--r-card);box-shadow:var(--sh-1)}
+.feitos>summary{display:flex;align-items:center;gap:8px;min-height:48px;padding:0 15px;cursor:pointer;list-style:none;border-radius:13px;font-family:var(--font-body);font-size:.8125rem;font-weight:600;letter-spacing:-.005em;color:var(--light-text-2);-webkit-tap-highlight-color:transparent;transition:background var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out)}
+.feitos>summary::-webkit-details-marker{display:none}
+.feitos>summary:hover{background:var(--wash);color:var(--light-text)}
+.feitos>summary:focus-visible{outline-offset:-2px}
+.feitos[open]>summary{border-radius:13px 13px 0 0;border-bottom:1px solid var(--light-line)}
+.feitos .chev{margin-left:auto}
+.lista-feita{list-style:none;margin:0;padding:2px 15px 8px}
+.feito{display:flex;gap:11px;align-items:flex-start;padding:11px 0;border-top:1px solid var(--light-line)}
+.feito:first-child{border-top:0}
+.feito .mk{flex:none;width:18px;height:18px;border-radius:50%;background:var(--light-teal);color:#fff;display:grid;place-items:center;margin-top:2px}
+.feito div{min-width:0}
+.feito b{display:block;font-size:.875rem;font-weight:600;color:var(--light-text-2);line-height:1.4;overflow-wrap:anywhere}
+.feito .val{display:block;margin-top:1px;font-size:.8125rem;color:var(--light-teal-ink);overflow-wrap:anywhere}
+
+.final{background:var(--light-pill-bg);border:1px solid var(--light-pill-line);border-radius:var(--r-card);padding:28px 20px;text-align:center;box-shadow:var(--sh-1)}
+.final .mk-big{width:44px;height:44px;border-radius:50%;background:var(--light-teal);color:#fff;display:grid;place-items:center;margin:0 auto 14px;box-shadow:0 0 0 5px rgba(24,144,173,.12)}
+.final h3{font-family:var(--font-display);font-size:1.125rem;font-weight:600;letter-spacing:-.02em;margin:0 0 6px}
+.final p{margin:0 auto 18px;max-width:34ch;font-size:.875rem;line-height:1.55;color:var(--light-text-2)}
+.nota{margin:16px 0 0;font-size:.8125rem;line-height:1.55;color:var(--ink-3)}
+
+/* ---------- andamento ---------- */
+.trilha{list-style:none;margin:0;padding:18px 18px 16px;background:#fff;border:1px solid var(--light-line);border-radius:var(--r-card);box-shadow:var(--sh-1)}
+.passo{position:relative;display:flex;gap:13px;padding-bottom:18px}
+.passo:last-child{padding-bottom:0}
+.passo::before{content:"";position:absolute;left:9px;top:23px;bottom:-1px;width:2px;border-radius:999px;background:var(--light-line)}
+.passo:last-child::before{display:none}
+.passo.feito::before{background:var(--light-pill-line)}
+.ponto{position:relative;z-index:1;flex:none;width:20px;height:20px;border-radius:50%;background:#fff;border:2px solid rgb(216,221,231);color:#fff;display:grid;place-items:center;margin-top:1px}
+.passo.feito .ponto{background:var(--light-teal);border-color:var(--light-teal)}
+.passo.agora .ponto{background:var(--color-accent);border-color:var(--color-accent);box-shadow:0 0 0 4px rgba(47,107,255,.14)}
+.rotulo{min-width:0;padding-top:1px;font-size:.9375rem;line-height:1.35;color:var(--light-text-2);overflow-wrap:anywhere}
+.passo.agora .rotulo{color:var(--light-text);font-weight:600;letter-spacing:-.01em}
+.rotulo em{display:block;font-style:normal;font-size:.625rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;margin-top:4px}
+.passo.agora .rotulo em{color:var(--color-accent)}
+.passo.feito .rotulo em{color:var(--light-teal-ink)}
+
+/* ---------- tabela ---------- */
+.tabela{background:#fff;border:1px solid var(--light-line);border-radius:var(--r-card);box-shadow:var(--sh-1);overflow:hidden}
+.lin{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 16px;border-bottom:1px solid var(--light-line)}
+.lin:last-child{border-bottom:0}
+.lin>div:first-child{min-width:0}
+.lin b{display:block;font-family:var(--font-display);font-size:.9375rem;font-weight:600;line-height:1.35;letter-spacing:-.01em;overflow-wrap:anywhere}
+.lin small{display:block;font-size:.75rem;color:var(--ink-3);margin-top:2px}
+.dir{flex:none;display:flex;align-items:center;gap:10px}
+.v{font-family:var(--font-display);font-size:.9375rem;font-weight:600;white-space:nowrap;font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.tag{font-size:.5625rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border-radius:999px;white-space:nowrap;line-height:1.4}
+.tag.pago{background:var(--light-pill-bg);color:var(--light-teal-ink);border:1px solid var(--light-pill-line)}
+.tag.pend{background:var(--wash-2);color:var(--light-text-2);border:1px solid var(--light-line)}
+.lin.total{background:var(--wash)}
+.lin.total b{font-family:var(--font-body);font-size:.6875rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.12em}
+.lin.total .v{font-size:1.0625rem}
+
+@media(min-width:420px){.doc{display:block}}
+@media(max-width:459px){
+  .campo{flex-direction:column;align-items:stretch}
+  .campo input,.campo textarea{flex:0 0 auto;width:100%}
+  .campo .btn,.campo .arquivo{width:100%}
+  .lin{flex-direction:column;align-items:flex-start;gap:9px}
+  .dir{width:100%;justify-content:space-between}
+}
+@media(min-width:760px){
+  .topo-in,.estado-in,.app{padding-left:24px;padding-right:24px}
+  .estado-in{grid-template-columns:minmax(0,1.4fr) minmax(0,2fr);align-items:center;gap:24px;padding-top:13px;padding-bottom:14px}
+  .celas{grid-template-columns:1fr 1fr;gap:18px}
+  .app{display:grid;grid-template-columns:212px minmax(0,1fr);gap:32px}
+  .nav{position:sticky;top:calc(var(--h-topo) + 88px);left:auto;right:auto;bottom:auto;align-self:start;grid-template-columns:1fr;background:none;backdrop-filter:none;-webkit-backdrop-filter:none;border-top:0;padding:20px 0 0;gap:3px}
+  .aba{flex-direction:row;justify-content:flex-start;gap:11px;min-height:44px;padding:0 12px;border:1px solid transparent;border-radius:9px;font-size:.875rem;transition:background var(--dur-short) var(--ease-out),color var(--dur-short) var(--ease-out),border-color var(--dur-short) var(--ease-out)}
+  .aba::before{display:none}
+  .aba:hover{background:rgba(19,21,32,.04);color:var(--light-text)}
+  .aba.ativa,.aba.ativa:hover{background:#fff;border-color:var(--light-line);color:var(--color-accent);box-shadow:var(--sh-1)}
+  .aba:focus-visible{outline-offset:1px}
+  .selo{position:static;margin-left:auto;box-shadow:none}
+  .conteudo{padding-top:26px;max-width:720px}
+  body{padding-bottom:0}
+}
+@media(max-width:759px){body{padding-bottom:72px}}
+@media(prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+  .btn:disabled{color:#fff;opacity:.55}
+  .btn.ghost:disabled{color:var(--light-text)}
+  .arquivo:has(input:disabled){color:var(--light-teal-ink);opacity:.55}
+  .btn:disabled::after,.arquivo:has(input:disabled)::after{display:none}
+}
+.ou{display:flex;align-items:center;gap:12px;margin:22px 0 16px;color:var(--ink-3,#7c838f);font-size:.75rem}
+.ou::before,.ou::after{content:"";flex:1;height:1px;background:var(--light-line)}
+.cod-linha{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px;align-items:stretch}
+#codigo{min-width:0;text-align:center;font-family:var(--font-display);font-size:1.125rem;font-weight:600;letter-spacing:.16em;padding-left:.16em}
+.cod-linha .btn{padding-left:22px;padding-right:22px;white-space:nowrap;margin-top:0}
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="wrap">
-    <a class="brand" href="https://meloinfo.com.br">
-      <svg width="26" height="26" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+<header class="topo">
+  <div class="topo-in">
+    <a class="marca" href="https://meloinfo.com.br">
+      <svg width="24" height="24" viewBox="0 0 32 32" fill="none" aria-hidden="true">
         <rect width="32" height="32" rx="8" fill="url(#bg)"/>
         <path d="M9.5 22.5V10l6.5 7.5L22.5 10v12.5" stroke="white" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
         <defs><linearGradient id="bg" x1="0" y1="0" x2="32" y2="32" gradientUnits="userSpaceOnUse"><stop stop-color="#5B5BF0"/><stop offset="1" stop-color="#2E7BE6"/></linearGradient></defs>
       </svg>
       <span>Melo Tecnologia</span>
     </a>
-    <button class="sair oculto" id="sair">Sair</button>
+    <div class="topo-fim">
+      <span class="doc">Área do cliente</span>
+      <button class="sair oculto" id="sair">Sair</button>
+    </div>
+  </div>
+</header>
+
+<div id="entrar" class="centro cartao oculto">
+  <div class="chave" aria-hidden="true">
+    <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3.5 7.5 12 13.5l8.5-6"/></svg>
+  </div>
+  <h1>Sua área do projeto</h1>
+  <p>Digite o seu e-mail. Eu envio um link de acesso — você não precisa criar senha nem lembrar de nada.</p>
+  <label for="email">Seu e-mail</label>
+  <input id="email" type="email" placeholder="seu@email.com" autocomplete="email" inputmode="email">
+  <button class="btn full" id="enviarLink">Receber link de acesso</button>
+  <p class="erro oculto" id="erroEntrar"></p>
+  <p class="ok-msg oculto" id="enviado">Pronto. Confira seu e-mail e clique no link que acabei de enviar.</p>
+
+  <div class="ou"><span>ou</span></div>
+  <label for="codigo">Recebeu um código pelo WhatsApp?</label>
+  <div class="cod-linha">
+    <input id="codigo" type="text" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="00000000">
+    <button class="btn" id="entrarCodigo">Entrar</button>
   </div>
 </div>
 
-<div id="entrar" class="centro oculto">
-  <h1>Sua área do projeto</h1>
-  <p>Digite o seu e-mail. Eu envio um link de acesso — você não precisa criar senha nem lembrar de nada.</p>
-  <input id="email" type="email" placeholder="seu@email.com" autocomplete="email">
-  <button class="btn full" id="enviarLink">Receber link de acesso</button>
-  <p class="erro oculto" id="erroEntrar"></p>
-  <p class="oculto" id="enviado" style="margin-top:18px">Pronto. Confira seu e-mail e clique no link que acabei de enviar.</p>
-</div>
+<div id="carregando" class="centro carregando"><p>Carregando…</p></div>
 
-<div id="carregando" class="centro"><p>Carregando…</p></div>
+<div id="painel" class="oculto">
 
-<div id="painel" class="wrap oculto">
-  <header class="hero">
-    <p class="eyebrow" id="oi"></p>
-    <h1 id="tituloProjeto"></h1>
-  </header>
-
-  <section>
-    <h2>Andamento</h2>
-    <div class="trilha" id="trilha"></div>
-  </section>
-
-  <section>
-    <h2>O que falta você me enviar <span id="contador"></span></h2>
-    <div id="requisitos"></div>
-    <p class="aviso" style="margin-top:14px">Assim que você enviar cada item eu sou avisado na hora. Não precisa me mandar mensagem confirmando.</p>
-  </section>
-
-  <section>
-    <h2>Financeiro</h2>
-    <div id="pagamentos"></div>
-  </section>
-
-  <section>
-    <h2>Contrato</h2>
-    <div class="linha">
-      <div><b>Proposta aceita</b><small>O escopo, os prazos e o valor combinados</small></div>
-      <a class="btn" id="linkProposta" style="padding:10px 20px;font-size:.875rem" target="_blank" rel="noopener">Abrir</a>
+  <div class="estado">
+    <div class="estado-in">
+      <div class="proj">
+        <b id="tituloProjeto"></b>
+        <span>Projeto de <span id="oi"></span></span>
+      </div>
+      <div class="celas">
+        <div class="cela viva"><span>Etapa atual</span><b id="etapaAtual">—</b></div>
+        <div class="cela"><span>Materiais</span><b id="contador">—</b></div>
+        <div class="barra" aria-hidden="true"><i id="barra"></i></div>
+      </div>
+      <ol class="mini" id="mini" aria-label="Etapas do projeto"></ol>
     </div>
-  </section>
+  </div>
 
-  <footer>Melo Tecnologia</footer>
+  <div class="app">
+
+    <nav class="nav" id="nav" role="tablist" aria-label="Áreas do projeto">
+      <button class="aba ativa" role="tab" type="button" id="aba-enviar" data-pnl="enviar" aria-controls="pnl-enviar" aria-selected="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>
+        <span>Enviar</span>
+        <b class="selo oculto" id="seloEnviar">0</b>
+      </button>
+      <button class="aba" role="tab" type="button" id="aba-andamento" data-pnl="andamento" aria-controls="pnl-andamento" aria-selected="false" tabindex="-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg>
+        <span>Andamento</span>
+      </button>
+      <button class="aba" role="tab" type="button" id="aba-financeiro" data-pnl="financeiro" aria-controls="pnl-financeiro" aria-selected="false" tabindex="-1">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2.5"/><path d="M3 10.5h18"/></svg>
+        <span>Financeiro</span>
+      </button>
+    </nav>
+
+    <main class="conteudo">
+
+      <section id="pnl-enviar" role="tabpanel" aria-labelledby="aba-enviar" tabindex="0">
+        <div class="pnl-topo">
+          <h2>O que falta você me enviar</h2>
+          <p>Na ordem que preferir. O que já foi enviado fica salvo.</p>
+        </div>
+        <div id="avisoEnvio" aria-live="polite"></div>
+        <div id="requisitos"></div>
+        <p class="nota">Assim que você envia um item eu sou avisado na hora. Não precisa confirmar por mensagem.</p>
+      </section>
+
+      <section id="pnl-andamento" role="tabpanel" aria-labelledby="aba-andamento" tabindex="0" hidden>
+        <div class="pnl-topo">
+          <h2>Andamento</h2>
+          <p id="etapaResumo">Onde o seu projeto está agora.</p>
+        </div>
+        <ol class="trilha" id="trilha"></ol>
+      </section>
+
+      <section id="pnl-financeiro" role="tabpanel" aria-labelledby="aba-financeiro" tabindex="0" hidden>
+        <div class="pnl-topo">
+          <h2>Financeiro</h2>
+          <p>O que já foi pago e o que fica para a entrega.</p>
+        </div>
+        <div class="tabela" id="pagamentos"></div>
+        <h3 class="sec">Contrato</h3>
+        <div class="tabela">
+          <div class="lin">
+            <div><b>Proposta aceita</b><small>Escopo, prazos e valor combinados</small></div>
+            <div class="dir"><a class="btn ghost" id="linkProposta" target="_blank" rel="noopener">Abrir proposta</a></div>
+          </div>
+        </div>
+      </section>
+
+      <footer>Melo Tecnologia</footer>
+    </main>
+
+  </div>
 </div>
 
 <script type="module">
@@ -144,8 +383,45 @@ const mostrar = (id) => $(id).classList.remove('oculto')
 const esconder = (id) => $(id).classList.add('oculto')
 const moeda = (centavos) => (centavos / 100).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })
 const escapar = (t) => String(t ?? '').replace(/[<>&"]/g, (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;', '"': '&quot;' })[c])
+const formatar = (t) => escapar(t).replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+
+const CHECK = '<svg width="12" height="12" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.2 8.6 6.4 11.8 12.8 4.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+const CHECK_G = '<svg width="20" height="20" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3.2 8.6 6.4 11.8 12.8 4.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
+const CLIPE = '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 16V4"/><path d="m7.5 8.5 4.5-4.5 4.5 4.5"/><path d="M4 16v2.5A1.5 1.5 0 0 0 5.5 20h13a1.5 1.5 0 0 0 1.5-1.5V16"/></svg>'
+const SETA = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>'
 
 let projeto = null
+
+const abas = Array.from(document.querySelectorAll('.aba'))
+
+function irPara(nome) {
+  abas.forEach((a) => {
+    const ativa = a.dataset.pnl === nome
+    a.classList.toggle('ativa', ativa)
+    a.setAttribute('aria-selected', ativa ? 'true' : 'false')
+    a.tabIndex = ativa ? 0 : -1
+    $('pnl-' + a.dataset.pnl).hidden = !ativa
+  })
+  window.scrollTo(0, 0)
+}
+
+document.addEventListener('click', (evento) => {
+  const aba = evento.target.closest('.aba')
+  if (aba) return irPara(aba.dataset.pnl)
+  const atalho = evento.target.closest('[data-ir]')
+  if (atalho) irPara(atalho.dataset.ir)
+})
+
+$('nav').addEventListener('keydown', (evento) => {
+  const atual = abas.indexOf(document.activeElement)
+  if (atual < 0) return
+  const passo = ['ArrowRight', 'ArrowDown'].includes(evento.key) ? 1 : ['ArrowLeft', 'ArrowUp'].includes(evento.key) ? -1 : 0
+  if (!passo) return
+  evento.preventDefault()
+  const proxima = abas[(atual + passo + abas.length) % abas.length]
+  proxima.focus()
+  irPara(proxima.dataset.pnl)
+})
 
 async function iniciar() {
   const { data: { session } } = await sb.auth.getSession()
@@ -153,6 +429,12 @@ async function iniciar() {
   if (!session) return mostrar('entrar')
   mostrar('sair')
   await carregar()
+}
+
+const paramEmail = new URLSearchParams(location.search).get('e')
+if (paramEmail) {
+  $('email').value = paramEmail
+  setTimeout(() => $('codigo')?.focus(), 100)
 }
 
 $('enviarLink').addEventListener('click', async () => {
@@ -165,12 +447,39 @@ $('enviarLink').addEventListener('click', async () => {
   })
   $('enviarLink').disabled = false
   if (error) {
-    $('erroEntrar').textContent = 'Não consegui enviar agora. Confira o e-mail e tente de novo.'
+    $('erroEntrar').textContent = /rate limit|too many/i.test(error.message || '')
+      ? 'Muitos envios agora. Me chame no WhatsApp que eu te passo um código para entrar aqui embaixo.'
+      : 'Não consegui enviar agora. Confira o e-mail e tente de novo.'
     return mostrar('erroEntrar')
   }
   esconder('erroEntrar')
   mostrar('enviado')
 })
+
+$('entrarCodigo').addEventListener('click', async () => {
+  const email = $('email').value.trim()
+  const token = $('codigo').value.trim().replace(/\D/g, '')
+  if (!email) {
+    $('erroEntrar').textContent = 'Coloque também o seu e-mail no campo acima.'
+    mostrar('erroEntrar')
+    return $('email').focus()
+  }
+  if (!token) {
+    $('erroEntrar').textContent = 'Digite o código que eu te mandei.'
+    mostrar('erroEntrar')
+    return $('codigo').focus()
+  }
+  $('entrarCodigo').disabled = true
+  const { error } = await sb.auth.verifyOtp({ email, token, type: 'email' })
+  if (error) {
+    $('entrarCodigo').disabled = false
+    $('erroEntrar').textContent = `Esse código não vale para ${email}. Confira se o e-mail acima é exatamente o que eu usei para gerar o código — ou me chame que eu gero outro.`
+    return mostrar('erroEntrar')
+  }
+  window.location.reload()
+})
+
+$('codigo').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('entrarCodigo').click() })
 
 $('sair').addEventListener('click', async () => {
   await sb.auth.signOut()
@@ -203,72 +512,158 @@ async function carregar() {
 function desenharTrilha(etapas) {
   const atual = etapas.findIndex((e) => e.status !== 'concluido')
   $('trilha').innerHTML = etapas.map((e, i) => {
-    const classe = e.status === 'concluido' ? 'ok' : i === atual ? 'agora' : ''
-    return `<div class="passo ${classe}">${escapar(e.titulo)}</div>`
+    const feito = e.status === 'concluido'
+    const agora = i === atual
+    const classe = feito ? 'feito' : agora ? 'agora' : ''
+    const selo = feito ? '<em>Concluída</em>' : agora ? '<em>Acontecendo agora</em>' : ''
+    return `
+      <li class="passo ${classe}" ${agora ? 'aria-current="step"' : ''}>
+        <span class="ponto" aria-hidden="true">${feito ? CHECK : ''}</span>
+        <span class="rotulo">${escapar(e.titulo)}${selo}</span>
+      </li>`
   }).join('')
+
+  const indice = atual === -1 ? etapas.length - 1 : atual
+  const etapaAtual = etapas[indice]
+  $('mini').innerHTML = etapas.map((e, i) => {
+    const feito = e.status === 'concluido'
+    const agora = i === atual
+    return `<li class="${feito ? 'feito' : agora ? 'agora' : ''}"${agora ? ' aria-current="step"' : ''}><span>${escapar(e.titulo)}</span></li>`
+  }).join('')
+
+  $('etapaAtual').textContent = etapaAtual ? etapaAtual.titulo : '—'
+  $('etapaResumo').textContent = etapas.length ? `Etapa ${indice + 1} de ${etapas.length}.` : 'Onde o seu projeto está agora.'
 }
 
 function desenharPagamentos(pagamentos) {
-  $('pagamentos').innerHTML = pagamentos.map((p) => `
-    <div class="linha">
+  const aberto = pagamentos.filter((p) => p.status !== 'pago').reduce((s, p) => s + p.valor_centavos, 0)
+  const linhas = pagamentos.map((p) => `
+    <div class="lin">
       <div>
         <b>${escapar(p.descricao)}</b>
         <small>${p.pago_em ? 'Pago em ' + new Date(p.pago_em + 'T12:00').toLocaleDateString('pt-BR') : 'Na entrega do projeto'}</small>
       </div>
-      <div style="display:flex;align-items:center;gap:12px">
+      <div class="dir">
         <span class="v">${moeda(p.valor_centavos)}</span>
         <span class="tag ${p.status === 'pago' ? 'pago' : 'pend'}">${p.status === 'pago' ? 'Pago' : 'Pendente'}</span>
       </div>
     </div>`).join('')
+
+  $('pagamentos').innerHTML = linhas + `
+    <div class="lin total">
+      <div><b>Em aberto</b></div>
+      <div class="dir"><span class="v">${moeda(aberto)}</span></div>
+    </div>`
 }
 
-function desenharRequisitos(reqs) {
-  const feitos = reqs.filter((r) => r.status !== 'pendente').length
-  $('contador').textContent = `${feitos} de ${reqs.length}`
+let pendentesAntes = null
+let primeiraCarga = true
 
-  $('requisitos').innerHTML = reqs.map((r) => {
-    const ok = r.status !== 'pendente'
-    return `
-      <div class="req ${ok ? 'ok' : ''}" data-id="${r.id}" data-campo="${r.campo_tipo}">
-        <div class="cab">
-          <div class="mk">${ok ? '✓' : ''}</div>
-          <div style="flex:1">
-            <h3>${escapar(r.titulo)}${r.obrigatorio ? '' : '<span class="opc">opcional</span>'}</h3>
-            ${r.descricao ? `<p>${escapar(r.descricao)}</p>` : ''}
-          </div>
-        </div>
-        ${ok ? valorEnviado(r) : campoDe(r)}
-      </div>`
-  }).join('')
+function desenharRequisitos(reqs) {
+  const pendentes = reqs.filter((r) => r.status === 'pendente')
+  const feitos = reqs.filter((r) => r.status !== 'pendente')
+
+  $('contador').textContent = `${feitos.length} de ${reqs.length}`
+  $('barra').style.width = reqs.length ? Math.round((feitos.length / reqs.length) * 100) + '%' : '0%'
+
+  const selo = $('seloEnviar')
+  selo.innerHTML = pendentes.length ? String(pendentes.length) : CHECK
+  selo.classList.remove('oculto')
+  $('aba-enviar').classList.toggle('pronta', pendentes.length === 0)
+
+  const recemEnviados = pendentesAntes ? feitos.filter((r) => pendentesAntes.has(r.id)) : []
+  pendentesAntes = new Set(pendentes.map((r) => r.id))
+
+  const restante = pendentes.length === 0
+    ? 'Era o último item da sua parte.'
+    : pendentes.length === 1
+      ? 'Falta 1 item.'
+      : `Faltam ${pendentes.length} itens.`
+
+  $('avisoEnvio').innerHTML = recemEnviados.length
+    ? `<div class="recebido" role="status">
+         <span class="mk" aria-hidden="true">${CHECK}</span>
+         <div><b>Recebi: ${escapar(recemEnviados[0].titulo)}</b><span>${restante}</span></div>
+       </div>`
+    : ''
+
+  const cartoes = pendentes.map((r, i) => `
+    <details class="req${i === 0 ? ' prox' : ''}" data-id="${escapar(r.id)}" data-campo="${escapar(r.campo_tipo)}"${i === 0 ? ' open' : ''}>
+      <summary>
+        <span class="ord" aria-hidden="true">${i + 1}</span>
+        <span class="it-tit" id="rot-${escapar(r.id)}">${escapar(r.titulo)}${r.obrigatorio ? '' : '<span class="opc">opcional</span>'}${i === 0 && pendentes.length > 1 ? '<em class="marca-prox">Próximo</em>' : ''}</span>
+        <span class="chev" aria-hidden="true">${SETA}</span>
+      </summary>
+      <div class="it-corpo">
+        ${r.descricao ? `<p class="it-desc">${formatar(r.descricao)}</p>` : ''}
+        ${campoDe(r)}
+      </div>
+    </details>`).join('')
+
+  const enviados = feitos.map((r) => `
+    <li class="feito">
+      <span class="mk" aria-hidden="true">${CHECK}</span>
+      <div>
+        <b>${escapar(r.titulo)}</b>
+        ${valorEnviado(r)}
+      </div>
+    </li>`).join('')
+
+  const fim = `
+    <div class="final">
+      <span class="mk-big" aria-hidden="true">${CHECK_G}</span>
+      <h3>Recebi tudo</h3>
+      <p>Não falta nada da sua parte. Agora o trabalho é comigo.</p>
+      <button class="btn ghost" type="button" data-ir="andamento">Ver o andamento</button>
+    </div>`
+
+  $('requisitos').innerHTML =
+    (pendentes.length ? cartoes : fim) +
+    (feitos.length
+      ? `<details class="feitos">
+           <summary>Já enviados (${feitos.length})<span class="chev" aria-hidden="true">${SETA}</span></summary>
+           <ul class="lista-feita">${enviados}</ul>
+         </details>`
+      : '')
 
   document.querySelectorAll('[data-acao="salvar"]').forEach((b) => b.addEventListener('click', salvar))
   document.querySelectorAll('[data-acao="arquivo"]').forEach((i) => i.addEventListener('change', enviarArquivo))
+
+  if (primeiraCarga && pendentes.length === 0) irPara('andamento')
+  else if (recemEnviados.length) window.scrollTo(0, 0)
+  primeiraCarga = false
 }
 
 function valorEnviado(r) {
-  if (r.campo_tipo === 'arquivo') return `<div class="val">Arquivo enviado</div>`
-  if (r.campo_tipo === 'confirmacao') return `<div class="val">Confirmado</div>`
-  if (r.campo_tipo === 'moeda') return `<div class="val">${moeda(Number(r.valor_texto) || 0)}</div>`
-  return `<div class="val">${escapar(r.valor_texto)}</div>`
+  if (r.campo_tipo === 'arquivo') return `<span class="val">${escapar(r.valor_texto) || 'Arquivo enviado'}</span>`
+  if (r.campo_tipo === 'confirmacao') return `<span class="val">Confirmado</span>`
+  if (r.campo_tipo === 'instrucao') return `<span class="val">Marcado como feito</span>`
+  if (r.campo_tipo === 'moeda') return `<span class="val">${moeda(Number(r.valor_texto) || 0)}</span>`
+  return `<span class="val">${escapar(r.valor_texto)}</span>`
 }
 
 function campoDe(r) {
+  const id = escapar(r.id)
   if (r.campo_tipo === 'arquivo') {
-    return `<div class="campo"><input type="file" data-acao="arquivo" data-id="${r.id}"></div>`
+    return `<div class="campo">
+      <label class="arquivo">${CLIPE}<span>Escolher arquivo</span>
+        <input type="file" data-acao="arquivo" data-id="${id}">
+      </label>
+    </div>`
   }
   if (r.campo_tipo === 'confirmacao') {
-    return `<div class="campo"><button class="btn" data-acao="salvar" data-id="${r.id}">Já fiz isso</button></div>`
+    return `<div class="campo"><button class="btn" type="button" data-acao="salvar" data-id="${id}" aria-describedby="rot-${id}">Já fiz isso</button></div>`
   }
   if (r.campo_tipo === 'instrucao') {
-    return `<div class="campo"><button class="btn" data-acao="salvar" data-id="${r.id}">Marcar como feito</button></div>`
+    return `<div class="campo"><button class="btn" type="button" data-acao="salvar" data-id="${id}" aria-describedby="rot-${id}">Marcar como feito</button></div>`
   }
   const tipo = r.campo_tipo === 'moeda' ? 'number' : r.campo_tipo === 'email' ? 'email' : 'text'
-  const dica = r.campo_tipo === 'moeda' ? 'placeholder="49,90" step="0.01"' : ''
+  const dica = r.campo_tipo === 'moeda' ? 'placeholder="49,90" step="0.01" inputmode="decimal"' : ''
   const longo = r.titulo.length > 30 && r.campo_tipo === 'texto' && (r.descricao ?? '').length > 120
   const entrada = longo
-    ? `<textarea rows="3" data-id="${r.id}"></textarea>`
-    : `<input type="${tipo}" ${dica} data-id="${r.id}">`
-  return `<div class="campo">${entrada}<button class="btn" data-acao="salvar" data-id="${r.id}">Enviar</button></div>`
+    ? `<textarea rows="3" data-id="${id}" aria-labelledby="rot-${id}"></textarea>`
+    : `<input type="${tipo}" ${dica} data-id="${id}" aria-labelledby="rot-${id}">`
+  return `<div class="campo">${entrada}<button class="btn" type="button" data-acao="salvar" data-id="${id}" aria-describedby="rot-${id}">Enviar</button></div>`
 }
 
 async function salvar(evento) {
@@ -291,6 +686,18 @@ async function enviarArquivo(evento) {
   const entrada = evento.currentTarget
   const arquivo = entrada.files?.[0]
   if (!arquivo) return
+
+  const LIMITE_MB = 50
+  if (arquivo.size > LIMITE_MB * 1024 * 1024) {
+    entrada.value = ''
+    alert(
+      `Esse arquivo tem ${Math.ceil(arquivo.size / 1048576)}MB e o limite de envio aqui é ${LIMITE_MB}MB.\n\n` +
+      'Suba o arquivo no Google Drive, Dropbox ou WeTransfer e cole o link no campo de texto deste item — ' +
+      'ou me mande direto no WhatsApp. Funciona igual.'
+    )
+    return
+  }
+
   entrada.disabled = true
 
   const nome = arquivo.name.replace(/[^\w.\-]/g, '_')
